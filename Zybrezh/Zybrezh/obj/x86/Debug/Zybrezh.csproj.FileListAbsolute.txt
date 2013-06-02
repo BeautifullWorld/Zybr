@@ -1,0 +1,14 @@
+C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\bin\Debug\Zybrezh.exe.config
+C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\bin\Debug\Zybrezh.exe
+C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\bin\Debug\Zybrezh.pdb
+C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\obj\x86\Debug\WindowsFormsApplication1.Form2.resources
+C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\obj\x86\Debug\WindowsFormsApplication1.Main.resources
+C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\obj\x86\Debug\Zybrezh.exe
+C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\obj\x86\Debug\Zybrezh.pdb
+C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\obj\x86\Debug\WindowsFormsApplication1.FileChoosing.resources
+C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\obj\x86\Debug\WindowsFormsApplication1.CreateNewXml.resources
