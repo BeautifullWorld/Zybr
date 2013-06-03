@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AreUSurecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AreUSurecs.Designer.cs">
+      <DependentUpon>AreUSurecs.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateNewXml.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AreUSurecs.resx">
+      <DependentUpon>AreUSurecs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateNewXml.resx">
       <DependentUpon>CreateNewXml.cs</DependentUpon>
     </EmbeddedResource>

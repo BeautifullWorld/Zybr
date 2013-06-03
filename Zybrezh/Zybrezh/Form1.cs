@@ -15,7 +15,7 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
-            if (Global.NumberOfQuestions > 0) //еси есть чё показывать
+            if (Global.QSet.Count > 0) //еси есть чё показывать
             {
                 QuestionShow.Text = Global.QSet[0].Text; //из нашего крутого списка в текстовую форму
                 NQ.Text = "Вопрос №" + Global.QSet[0].id; //в рамочку наверху
@@ -43,7 +43,7 @@ namespace WindowsFormsApplication1
 
         private void Ok_Click(object sender, EventArgs e) //Знаю
         {
-             if (Global.NumberOfQuestions - 1 <= i) i = 0; //еси добрались до конца вопросов
+             if (Global.QSet.Count - 1 <= i) i = 0; //еси добрались до конца вопросов
              else i++; //раньше то 0 было (он изначально показывается)
              QuestionShow.Text = Global.QSet[i].Text;
              NQ.Text = "Вопрос №" + Global.QSet[i].id;
@@ -51,7 +51,7 @@ namespace WindowsFormsApplication1
 
         private void NotOk_Click(object sender, EventArgs e) //Не Знаю  - тоже самое пока Знаешь не знаешь какая разница!
         {
-             if (Global.NumberOfQuestions - 1 <= i) i = 0;
+            if (Global.QSet.Count - 1 <= i) i = 0;
              else i++;
              QuestionShow.Text = Global.QSet[i].Text;
              NQ.Text = "Вопрос №" + Global.QSet[i].id;

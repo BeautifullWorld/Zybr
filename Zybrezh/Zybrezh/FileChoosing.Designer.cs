@@ -38,6 +38,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.NQ = new System.Windows.Forms.Label();
+            this.DeletQSetButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -65,7 +66,7 @@
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(315, 20);
+            this.textBox1.Size = new System.Drawing.Size(371, 20);
             this.textBox1.TabIndex = 1;
             // 
             // NewQSetButton
@@ -103,7 +104,7 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Enabled = false;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(232, 38);
+            this.button2.Location = new System.Drawing.Point(288, 38);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(95, 32);
             this.button2.TabIndex = 4;
@@ -117,7 +118,7 @@
             this.QuestionShow.Location = new System.Drawing.Point(12, 93);
             this.QuestionShow.Name = "QuestionShow";
             this.QuestionShow.ReadOnly = true;
-            this.QuestionShow.Size = new System.Drawing.Size(314, 170);
+            this.QuestionShow.Size = new System.Drawing.Size(371, 170);
             this.QuestionShow.TabIndex = 5;
             this.QuestionShow.Text = "";
             // 
@@ -128,7 +129,7 @@
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Enabled = false;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(151, 269);
+            this.button3.Location = new System.Drawing.Point(208, 269);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(85, 32);
             this.button3.TabIndex = 6;
@@ -143,7 +144,7 @@
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Enabled = false;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Location = new System.Drawing.Point(242, 269);
+            this.button4.Location = new System.Drawing.Point(299, 269);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(84, 32);
             this.button4.TabIndex = 7;
@@ -161,13 +162,29 @@
             this.NQ.TabIndex = 8;
             this.NQ.Text = "Вопрос";
             // 
+            // DeletQSetButton
+            // 
+            this.DeletQSetButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DeletQSetButton.BackColor = System.Drawing.Color.Gray;
+            this.DeletQSetButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeletQSetButton.Enabled = false;
+            this.DeletQSetButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.DeletQSetButton.Location = new System.Drawing.Point(187, 38);
+            this.DeletQSetButton.Name = "DeletQSetButton";
+            this.DeletQSetButton.Size = new System.Drawing.Size(95, 32);
+            this.DeletQSetButton.TabIndex = 9;
+            this.DeletQSetButton.Text = "Удалить";
+            this.DeletQSetButton.UseVisualStyleBackColor = false;
+            this.DeletQSetButton.Click += new System.EventHandler(this.DeletQSetButton_Click);
+            // 
             // FileChoosing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.books228577dtg3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(339, 313);
+            this.ClientSize = new System.Drawing.Size(395, 313);
+            this.Controls.Add(this.DeletQSetButton);
             this.Controls.Add(this.NQ);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -197,6 +214,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label NQ;
+        private System.Windows.Forms.Button DeletQSetButton;
 
 
     }
