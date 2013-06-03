@@ -120,6 +120,7 @@
             this.QuestionShow.Size = new System.Drawing.Size(314, 170);
             this.QuestionShow.TabIndex = 5;
             this.QuestionShow.Text = "";
+            this.QuestionShow.TextChanged += new System.EventHandler(this.QuestionShow_TextChanged);
             // 
             // button3
             // 

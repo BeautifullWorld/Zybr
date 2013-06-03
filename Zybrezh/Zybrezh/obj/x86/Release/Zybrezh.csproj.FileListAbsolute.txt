@@ -12,3 +12,6 @@ C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\obj\x86\Release\Zybrezh.
 C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\obj\x86\Release\Zybrezh.pdb
 C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\obj\x86\Release\WindowsFormsApplication1.CreateNewXml.resources
 C:\Users\Артур\Desktop\C#\Projects\Zybrezh\Zybrezh\obj\x86\Release\WindowsFormsApplication1.FileChoosing.resources
+C:\Zybr\Zybrezh\Zybrezh\bin\Release\Zybrezh.exe.config
+C:\Zybr\Zybrezh\Zybrezh\obj\x86\Release\Zybrezh.exe
+C:\Zybr\Zybrezh\Zybrezh\obj\x86\Release\Zybrezh.pdb

@@ -156,5 +156,10 @@ namespace WindowsFormsApplication1
                 NQ.Text = "Вопроcов Нет";
             }
         }
+
+        private void QuestionShow_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
