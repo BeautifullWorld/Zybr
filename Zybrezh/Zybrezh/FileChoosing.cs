@@ -214,11 +214,11 @@ namespace WindowsFormsApplication1
             }
         }
 
-<<<<<<< HEAD
         private void QuestionShow_TextChanged(object sender, EventArgs e)
         {
 
-=======
+        }
+
         private void DeletQSetButton_Click(object sender, EventArgs e)
         {
             Global.AreYouSure = false;
@@ -246,7 +246,6 @@ namespace WindowsFormsApplication1
                 NQ.Text = "Вопроcов Нет";
             }
             Global.AreYouSure = false;
->>>>>>> 0a616eb2bd351e86c689f33e0c4e4c679e0e4de1
         }
     }
 }
