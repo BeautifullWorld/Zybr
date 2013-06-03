@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -38,6 +39,19 @@ namespace WindowsFormsApplication1
         private void Main_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Global.QSetName != null) //сохраним изменения
+            {
+                File.Delete(Global.QSetName + ".xml"); 
+                Global.CreateXMLDocument(Global.QSetName);
+                for (int i = 0; i < Global.QSet.Count; i++)
+                {
+                    Global.WriteToXMLDocument(Global.QSetName,Global.QSet[i].id,Global.QSet[i].Text,Global.QSet[i].Attribute);
+                }
+            }
         }
     }
 }

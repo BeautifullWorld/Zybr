@@ -58,7 +58,7 @@
             this.BaseButton.Name = "BaseButton";
             this.BaseButton.Size = new System.Drawing.Size(207, 72);
             this.BaseButton.TabIndex = 1;
-            this.BaseButton.Text = "Пополнить базу вопросов";
+            this.BaseButton.Text = "Редактировать Базу Вопросов";
             this.BaseButton.UseVisualStyleBackColor = false;
             this.BaseButton.Click += new System.EventHandler(this.BaseButton_Click);
             // 
@@ -73,6 +73,7 @@
             this.Controls.Add(this.StartButton);
             this.Name = "Main";
             this.Text = "ЗубрЗубр!";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
 

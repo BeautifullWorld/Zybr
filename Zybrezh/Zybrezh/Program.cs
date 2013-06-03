@@ -17,8 +17,8 @@ namespace WindowsFormsApplication1
             public string Text;
             public int Attribute; //хз-зачем пока
         }
-        public static int NumberOfQuestions = 0;
         public static string QSetName = null;
+        public static bool AreYouSure = false;
         public static List<Question> QSet = new List<Question>(); //походу удобный список ибо обращаться можно как к массиву
 
 
@@ -63,7 +63,6 @@ namespace WindowsFormsApplication1
             xd.Load(fs);
 
             XmlNodeList list = xd.GetElementsByTagName("Question"); //сделал тот крутой список из всех объектов xml документа наз-ся Question [тип 1]
-            Global.NumberOfQuestions = list.Count; //кол-во вопросов узнал
             Global.QSet.Clear(); //старое очистим
 
             for (int i = 0; i < list.Count; i++) //запонляю свой список вопросами из файла

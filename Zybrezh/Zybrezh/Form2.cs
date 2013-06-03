@@ -15,12 +15,16 @@ namespace WindowsFormsApplication1
         public Form2()
         {
             InitializeComponent();
+<<<<<<< HEAD
             NQ.Text = "Вопрос №" + (Global.QSet.Count+1); //типа следующий же
             if (Global.QSet.Count > 0)
             {
                 for(int i=0; i<Global.QSet.Count; i++)
                     listBox1.Items.Add(Global.QSet[i].Text);
             }
+=======
+            NQ.Text = "Вопрос №" + (Global.QSet.Count);
+>>>>>>> 0a616eb2bd351e86c689f33e0c4e4c679e0e4de1
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -34,10 +38,17 @@ namespace WindowsFormsApplication1
             New.Text = QuestionWrite.Text;
             New.Attribute = 69; //ибо я пошлый
             New.id = Global.QSet.Count.ToString(); //новый же вопрос сюда пихаем потом надо доработать что новый необязон последний ну или я хз чё
+<<<<<<< HEAD
             listBox1.Items.Add(New.Text);
+=======
+>>>>>>> 0a616eb2bd351e86c689f33e0c4e4c679e0e4de1
             Global.QSet.Add(New); //в список его!
             QuestionWrite.Text = null; //обновим
+<<<<<<< HEAD
             NQ.Text = "Вопрос №" + (Global.QSet.Count + 1);
+=======
+            NQ.Text = "Вопрос №" + (Global.QSet.Count);
+>>>>>>> 0a616eb2bd351e86c689f33e0c4e4c679e0e4de1
         }
 
         private void End_Click(object sender, EventArgs e)
