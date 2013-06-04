@@ -22,10 +22,10 @@ namespace WindowsFormsApplication1
             }
             else 
             {
-                NotOk.Enabled = false;
-                NotOk.BackColor = Color.Gray;
-                Ok.Enabled = false;
-                Ok.BackColor = Color.Gray;
+                NotOkButton.Enabled = false;
+                NotOkButton.BackColor = Color.Gray;
+                OkButton.Enabled = false;
+                OkButton.BackColor = Color.Gray;
                 QuestionShow.Text = null;
                 NQ.Text = "Вопроcов Нет";
             }
@@ -41,7 +41,7 @@ namespace WindowsFormsApplication1
             
         }
 
-        private void Ok_Click(object sender, EventArgs e) //Знаю
+        private void OkButton_Click(object sender, EventArgs e) //Знаю
         {
              if (Global.QSet.Count - 1 <= i) i = 0; //еси добрались до конца вопросов
              else i++; //раньше то 0 было (он изначально показывается)
@@ -49,7 +49,7 @@ namespace WindowsFormsApplication1
              NQ.Text = "Вопрос №" + Global.QSet[i].id;
         }
 
-        private void NotOk_Click(object sender, EventArgs e) //Не Знаю  - тоже самое пока Знаешь не знаешь какая разница!
+        private void NotOkButton_Click(object sender, EventArgs e) //Не Знаю  - тоже самое пока Знаешь не знаешь какая разница!
         {
             if (Global.QSet.Count - 1 <= i) i = 0;
              else i++;

@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
+            this.OpenQSetButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.NewQSetButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.RedactirovatButton = new System.Windows.Forms.Button();
             this.QuestionShow = new System.Windows.Forms.RichTextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.PrevQButton = new System.Windows.Forms.Button();
+            this.NextQButton = new System.Windows.Forms.Button();
             this.NQ = new System.Windows.Forms.Label();
             this.DeletQSetButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -45,19 +45,19 @@
             // 
             this.openFileDialog1.Filter = "|*.xml";
             // 
-            // button1
+            // OpenQSetButton
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(12, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 32);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Открыть";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.OpenQSetButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.OpenQSetButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.OpenQSetButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.OpenQSetButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.OpenQSetButton.Location = new System.Drawing.Point(12, 38);
+            this.OpenQSetButton.Name = "OpenQSetButton";
+            this.OpenQSetButton.Size = new System.Drawing.Size(63, 32);
+            this.OpenQSetButton.TabIndex = 0;
+            this.OpenQSetButton.Text = "Открыть";
+            this.OpenQSetButton.UseVisualStyleBackColor = false;
+            this.OpenQSetButton.Click += new System.EventHandler(this.OpenQSetButton_Click);
             // 
             // textBox1
             // 
@@ -97,20 +97,20 @@
             this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // button2
+            // RedactirovatButton
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.BackColor = System.Drawing.Color.Gray;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Enabled = false;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(288, 38);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 32);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Редактировать";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.RedactirovatButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.RedactirovatButton.BackColor = System.Drawing.Color.Gray;
+            this.RedactirovatButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RedactirovatButton.Enabled = false;
+            this.RedactirovatButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.RedactirovatButton.Location = new System.Drawing.Point(288, 38);
+            this.RedactirovatButton.Name = "RedactirovatButton";
+            this.RedactirovatButton.Size = new System.Drawing.Size(95, 32);
+            this.RedactirovatButton.TabIndex = 4;
+            this.RedactirovatButton.Text = "Редактировать";
+            this.RedactirovatButton.UseVisualStyleBackColor = false;
+            this.RedactirovatButton.Click += new System.EventHandler(this.RedactirovatButton_Click);
             // 
             // QuestionShow
             // 
@@ -123,35 +123,35 @@
             this.QuestionShow.Text = "";
             this.QuestionShow.TextChanged += new System.EventHandler(this.QuestionShow_TextChanged);
             // 
-            // button3
+            // PrevQButton
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.BackColor = System.Drawing.Color.Gray;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Enabled = false;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(208, 269);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(85, 32);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Предыдущий";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.PrevQButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PrevQButton.BackColor = System.Drawing.Color.Gray;
+            this.PrevQButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PrevQButton.Enabled = false;
+            this.PrevQButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PrevQButton.Location = new System.Drawing.Point(208, 269);
+            this.PrevQButton.Name = "PrevQButton";
+            this.PrevQButton.Size = new System.Drawing.Size(85, 32);
+            this.PrevQButton.TabIndex = 6;
+            this.PrevQButton.Text = "Предыдущий";
+            this.PrevQButton.UseVisualStyleBackColor = false;
+            this.PrevQButton.Click += new System.EventHandler(this.PrevQButton_Click);
             // 
-            // button4
+            // NextQButton
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.BackColor = System.Drawing.Color.Gray;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Enabled = false;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Location = new System.Drawing.Point(299, 269);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(84, 32);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Следующий";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.NextQButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.NextQButton.BackColor = System.Drawing.Color.Gray;
+            this.NextQButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NextQButton.Enabled = false;
+            this.NextQButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.NextQButton.Location = new System.Drawing.Point(299, 269);
+            this.NextQButton.Name = "NextQButton";
+            this.NextQButton.Size = new System.Drawing.Size(84, 32);
+            this.NextQButton.TabIndex = 7;
+            this.NextQButton.Text = "Следующий";
+            this.NextQButton.UseVisualStyleBackColor = false;
+            this.NextQButton.Click += new System.EventHandler(this.NextQButton_Click);
             // 
             // NQ
             // 
@@ -187,14 +187,14 @@
             this.ClientSize = new System.Drawing.Size(395, 313);
             this.Controls.Add(this.DeletQSetButton);
             this.Controls.Add(this.NQ);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.NextQButton);
+            this.Controls.Add(this.PrevQButton);
             this.Controls.Add(this.QuestionShow);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.RedactirovatButton);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.NewQSetButton);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.OpenQSetButton);
             this.Name = "FileChoosing";
             this.Text = "База Вопросов";
             this.Load += new System.EventHandler(this.FileChoosing_Load);
@@ -206,14 +206,14 @@
         #endregion
 
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button OpenQSetButton;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button NewQSetButton;
         private System.Windows.Forms.Button BackButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button RedactirovatButton;
         private System.Windows.Forms.RichTextBox QuestionShow;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button PrevQButton;
+        private System.Windows.Forms.Button NextQButton;
         private System.Windows.Forms.Label NQ;
         private System.Windows.Forms.Button DeletQSetButton;
 
