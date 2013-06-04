@@ -47,7 +47,7 @@ namespace WindowsFormsApplication1
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBox1.SelectedIndex > 0)
+            if (listBox1.SelectedIndex >= 0) //исправлено 
             {
                 Delete.Enabled = true;
                 Delete.BackColor = Color.FromArgb(255, 255, 192);
