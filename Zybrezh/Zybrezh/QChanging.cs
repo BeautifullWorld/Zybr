@@ -14,8 +14,8 @@ namespace WindowsFormsApplication1
         public QChanging(Form2 f2)//изменил конструктор, чтобы получить значенния из Form2
         {
             InitializeComponent();
-            NQ.Text = "Вопрос №" + (f2.listBox1.SelectedIndex + 1);
-            QuestionWrite.Text = f2.listBox1.SelectedItem + "";
+            textBox1.Text = f2.dataGridView1.CurrentRow.Cells[0].Value + "";
+            QuestionWrite.Text = f2.dataGridView1.CurrentRow.Cells[1].Value + "";
         }
 
         private void Save_Click(object sender, EventArgs e)

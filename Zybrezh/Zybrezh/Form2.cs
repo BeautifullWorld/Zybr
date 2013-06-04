@@ -18,8 +18,10 @@ namespace WindowsFormsApplication1
             NQ.Text = "Вопрос №" + (Global.QSet.Count+1); //типа следующий же
             if (Global.QSet.Count > 0)
             {
-                for(int i=0; i<Global.QSet.Count; i++)
-                    listBox1.Items.Add(Global.QSet[i].Text);
+                for (int i = 0; i < Global.QSet.Count; i++)
+                {
+                    dataGridView1.Rows.Add(Global.QSet[i].id+1, Global.QSet[i].Text);
+                }
             }
         }
 
@@ -34,7 +36,7 @@ namespace WindowsFormsApplication1
             New.Text = QuestionWrite.Text;
             New.Attribute = 69; //ибо я пошлый
             New.id = Global.QSet.Count.ToString(); //новый же вопрос сюда пихаем потом надо доработать что новый необязон последний ну или я хз чё
-            listBox1.Items.Add(New.Text);
+            dataGridView1.Rows.Add(New.id, New.Text);
             Global.QSet.Add(New); //в список его!
             QuestionWrite.Text = null; //обновим
             NQ.Text = "Вопрос №" + (Global.QSet.Count + 1);
@@ -45,32 +47,30 @@ namespace WindowsFormsApplication1
             this.Close();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listBox1.SelectedIndex >= 0) //исправлено 
-            {
-                Delete.Enabled = true;
-                Delete.BackColor = Color.FromArgb(255, 255, 192);
-                Change.Enabled = true;
-                Change.BackColor = Color.FromArgb(255, 255, 192);
-            }
-        }
         private void Delete_Click(object sender, EventArgs e)
         {
-            Global.QSet.RemoveAt(listBox1.SelectedIndex);
-            listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+            foreach (DataGridViewRow r in dataGridView1.SelectedRows)
+            {
+                int ind = r.Index;
+                dataGridView1.Rows.RemoveAt(ind);
+                Global.QSet.RemoveAt(ind);
+            }
             NQ.Text = "Вопрос №" + (Global.QSet.Count + 1);
         }
 
         public void Change_Click(object sender, EventArgs e)//изменить
         {
-            int ind = listBox1.SelectedIndex;
             QChanging QChanging = new QChanging(this);
             this.Hide();
             QChanging.ShowDialog();
             QChanging.Close();
-            listBox1.Items[ind] = QChanging.QuestionWrite.Text;//сохраняем
-            Global.QSet[ind].Text = QChanging.QuestionWrite.Text;//измененные значения
+            dataGridView1.CurrentRow.Cells[0].Value = QChanging.textBox1.Text;
+            int ind = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            Global.Question New = new Global.Question();
+            New.id = ind.ToString();
+            New.Text = QChanging.QuestionWrite.Text;
+            Global.QSet.Insert(ind, New);
+            dataGridView1.CurrentRow.Cells[1].Value = QChanging.QuestionWrite.Text;
             this.Show();
         }
     }

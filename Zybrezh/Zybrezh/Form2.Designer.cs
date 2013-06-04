@@ -32,9 +32,12 @@
             this.End = new System.Windows.Forms.Button();
             this.Next = new System.Windows.Forms.Button();
             this.NQ = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.Delete = new System.Windows.Forms.Button();
             this.Change = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Question = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // QuestionWrite
@@ -87,23 +90,11 @@
             this.NQ.TabIndex = 6;
             this.NQ.Text = "Вопрос";
             // 
-            // listBox1
-            // 
-            this.listBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(16, 112);
-            this.listBox1.MultiColumn = true;
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(304, 212);
-            this.listBox1.TabIndex = 7;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
             // Delete
             // 
             this.Delete.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Delete.BackColor = System.Drawing.Color.Gray;
+            this.Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Delete.Enabled = false;
             this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Delete.Location = new System.Drawing.Point(234, 340);
@@ -117,9 +108,8 @@
             // Change
             // 
             this.Change.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Change.BackColor = System.Drawing.Color.Gray;
+            this.Change.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Change.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Change.Enabled = false;
             this.Change.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Change.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Change.Location = new System.Drawing.Point(142, 340);
@@ -130,6 +120,33 @@
             this.Change.UseVisualStyleBackColor = false;
             this.Change.Click += new System.EventHandler(this.Change_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Question});
+            this.dataGridView1.Location = new System.Drawing.Point(16, 112);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.NullValue = "0";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(304, 205);
+            this.dataGridView1.TabIndex = 11;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "№";
+            this.Id.Name = "Id";
+            this.Id.Width = 35;
+            // 
+            // Question
+            // 
+            this.Question.HeaderText = "Вопрос";
+            this.Question.Name = "Question";
+            this.Question.Width = 269;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,9 +154,9 @@
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.books228577dtg3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(332, 377);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Change);
             this.Controls.Add(this.Delete);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.NQ);
             this.Controls.Add(this.Next);
             this.Controls.Add(this.End);
@@ -147,6 +164,7 @@
             this.Name = "Form2";
             this.Text = "Что будем Зубрить?";
             this.Load += new System.EventHandler(this.Form2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,7 +178,9 @@
         private System.Windows.Forms.Label NQ;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Button Change;
-        public System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Question;
+        public System.Windows.Forms.DataGridView dataGridView1;
 
     }
 }

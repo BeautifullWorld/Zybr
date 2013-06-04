@@ -31,11 +31,12 @@
             this.QuestionWrite = new System.Windows.Forms.TextBox();
             this.NQ = new System.Windows.Forms.Label();
             this.Save = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // QuestionWrite
             // 
-            this.QuestionWrite.Location = new System.Drawing.Point(12, 25);
+            this.QuestionWrite.Location = new System.Drawing.Point(12, 32);
             this.QuestionWrite.Multiline = true;
             this.QuestionWrite.Name = "QuestionWrite";
             this.QuestionWrite.Size = new System.Drawing.Size(345, 65);
@@ -46,16 +47,16 @@
             this.NQ.AutoSize = true;
             this.NQ.Location = new System.Drawing.Point(12, 9);
             this.NQ.Name = "NQ";
-            this.NQ.Size = new System.Drawing.Size(44, 13);
+            this.NQ.Size = new System.Drawing.Size(58, 13);
             this.NQ.TabIndex = 1;
-            this.NQ.Text = "Вопрос";
+            this.NQ.Text = "Вопрос №";
             // 
             // Save
             // 
             this.Save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Save.Location = new System.Drawing.Point(269, 96);
+            this.Save.Location = new System.Drawing.Point(269, 103);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(85, 33);
             this.Save.TabIndex = 2;
@@ -63,12 +64,20 @@
             this.Save.UseVisualStyleBackColor = false;
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(67, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(37, 20);
+            this.textBox1.TabIndex = 3;
+            // 
             // QChanging
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.books228577dtg3;
             this.ClientSize = new System.Drawing.Size(366, 141);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.NQ);
             this.Controls.Add(this.QuestionWrite);
@@ -84,5 +93,6 @@
         private System.Windows.Forms.Label NQ;
         private System.Windows.Forms.Button Save;
         public System.Windows.Forms.TextBox QuestionWrite;
+        public System.Windows.Forms.TextBox textBox1;
     }
 }
