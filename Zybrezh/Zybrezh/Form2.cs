@@ -19,7 +19,7 @@ namespace WindowsFormsApplication1
             if (Global.QSet.Count > 0)
             {
                 for(int i=0; i<Global.QSet.Count; i++)
-                    listBox1.Items.Add(Global.QSet[i].Text);
+                    listBox1.Items.Add(Global.QSet[i].id+Global.QSet[i].Text);
             }
         }
 

@@ -1,7 +1,7 @@
-Zybrezh.exe
-Zybrezh.pdb
+*.exe
+*.pdb
 *.xml
-Zubrezh.suo
+*.suo
 *.tlog
 *.txt
 *.suo
