@@ -42,7 +42,7 @@
             this.QuestionWrite.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.QuestionWrite.Location = new System.Drawing.Point(16, 25);
             this.QuestionWrite.Name = "QuestionWrite";
-            this.QuestionWrite.Size = new System.Drawing.Size(431, 180);
+            this.QuestionWrite.Size = new System.Drawing.Size(304, 45);
             this.QuestionWrite.TabIndex = 0;
             this.QuestionWrite.Text = "";
             // 
@@ -92,6 +92,7 @@
             this.listBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(16, 112);
+            this.listBox1.MultiColumn = true;
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(304, 212);
             this.listBox1.TabIndex = 7;

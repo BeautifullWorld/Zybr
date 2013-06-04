@@ -78,6 +78,12 @@
     <Compile Include="CreateNewXml.Designer.cs">
       <DependentUpon>CreateNewXml.cs</DependentUpon>
     </Compile>
+    <Compile Include="ErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorForm.Designer.cs">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FileChoosing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateNewXml.resx">
       <DependentUpon>CreateNewXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorForm.resx">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FileChoosing.resx">
       <DependentUpon>FileChoosing.cs</DependentUpon>

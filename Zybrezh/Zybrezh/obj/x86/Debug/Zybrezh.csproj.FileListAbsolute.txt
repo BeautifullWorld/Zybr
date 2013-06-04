@@ -30,3 +30,4 @@ C:\Users\Артур\Documents\GitHub\Zybrezh\Zybrezh\obj\x86\Debug\WindowsFormsA
 C:\Users\Артур\Documents\GitHub\Zybrezh\Zybrezh\obj\x86\Debug\WindowsFormsApplication1.QChanging.resources
 C:\Users\Артур\Documents\GitHub\Zybrezh\Zybrezh\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Артур\Documents\GitHub\Zybrezh\Zybrezh\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Артур\Documents\GitHub\Zybrezh\Zybrezh\obj\x86\Debug\WindowsFormsApplication1.ErrorForm.resources
