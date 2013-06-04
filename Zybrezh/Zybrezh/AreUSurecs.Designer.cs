@@ -28,72 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.TopLabel = new System.Windows.Forms.Label();
+            this.SureLabel = new System.Windows.Forms.Label();
+            this.QSetNameShow = new System.Windows.Forms.TextBox();
+            this.NotOkButton = new System.Windows.Forms.Button();
+            this.OkButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // TopLabel
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(35, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Вы Собираетесть удалить базу вопросов";
+            this.TopLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TopLabel.AutoSize = true;
+            this.TopLabel.ForeColor = System.Drawing.Color.Red;
+            this.TopLabel.Location = new System.Drawing.Point(35, 2);
+            this.TopLabel.Name = "TopLabel";
+            this.TopLabel.Size = new System.Drawing.Size(216, 13);
+            this.TopLabel.TabIndex = 0;
+            this.TopLabel.Text = "Вы Собираетесть удалить базу вопросов";
             // 
-            // label3
+            // SureLabel
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(101, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Вы Уверены?";
+            this.SureLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SureLabel.AutoSize = true;
+            this.SureLabel.ForeColor = System.Drawing.Color.Red;
+            this.SureLabel.Location = new System.Drawing.Point(101, 41);
+            this.SureLabel.Name = "SureLabel";
+            this.SureLabel.Size = new System.Drawing.Size(77, 13);
+            this.SureLabel.TabIndex = 2;
+            this.SureLabel.Text = "Вы Уверены?";
             // 
-            // textBox1
+            // QSetNameShow
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.Location = new System.Drawing.Point(12, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(260, 20);
-            this.textBox1.TabIndex = 3;
+            this.QSetNameShow.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.QSetNameShow.BackColor = System.Drawing.SystemColors.Control;
+            this.QSetNameShow.Location = new System.Drawing.Point(12, 18);
+            this.QSetNameShow.Name = "QSetNameShow";
+            this.QSetNameShow.ReadOnly = true;
+            this.QSetNameShow.Size = new System.Drawing.Size(260, 20);
+            this.QSetNameShow.TabIndex = 3;
             // 
-            // button4
+            // NotOkButton
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.BackColor = System.Drawing.Color.Red;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Location = new System.Drawing.Point(12, 78);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(108, 32);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Нет, Что я творю?";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.NotOkButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.NotOkButton.BackColor = System.Drawing.Color.Red;
+            this.NotOkButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NotOkButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.NotOkButton.Location = new System.Drawing.Point(12, 78);
+            this.NotOkButton.Name = "NotOkButton";
+            this.NotOkButton.Size = new System.Drawing.Size(108, 32);
+            this.NotOkButton.TabIndex = 8;
+            this.NotOkButton.Text = "Нет, Что я творю?";
+            this.NotOkButton.UseVisualStyleBackColor = false;
+            this.NotOkButton.Click += new System.EventHandler(this.NotOkButton_Click);
             // 
-            // button1
+            // OkButton
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.Lime;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(164, 78);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 32);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Да, я уверен";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.OkButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.OkButton.BackColor = System.Drawing.Color.Lime;
+            this.OkButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.OkButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.OkButton.Location = new System.Drawing.Point(164, 78);
+            this.OkButton.Name = "OkButton";
+            this.OkButton.Size = new System.Drawing.Size(108, 32);
+            this.OkButton.TabIndex = 9;
+            this.OkButton.Text = "Да, я уверен";
+            this.OkButton.UseVisualStyleBackColor = false;
+            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
             // AreUSurecs
             // 
@@ -102,13 +102,14 @@
             this.BackColor = System.Drawing.Color.Yellow;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(284, 132);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.OkButton);
+            this.Controls.Add(this.NotOkButton);
+            this.Controls.Add(this.QSetNameShow);
+            this.Controls.Add(this.SureLabel);
+            this.Controls.Add(this.TopLabel);
             this.Name = "AreUSurecs";
             this.Text = "Вы Уверены?";
+            this.Load += new System.EventHandler(this.AreUSurecs_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,10 +117,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label TopLabel;
+        private System.Windows.Forms.Label SureLabel;
+        private System.Windows.Forms.TextBox QSetNameShow;
+        private System.Windows.Forms.Button NotOkButton;
+        private System.Windows.Forms.Button OkButton;
     }
 }

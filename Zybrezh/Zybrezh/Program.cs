@@ -77,6 +77,18 @@ namespace WindowsFormsApplication1
             fs.Close();
             xd.Save(filepath);
         }
+        public static void SaveCurrentChanges(string name)
+        {
+            if (Global.QSetName != null)
+            {
+                File.Delete(name + ".xml");
+                Global.CreateXMLDocument(name);
+                for (int k = 0; k < Global.QSet.Count; k++)
+                {
+                    Global.WriteToXMLDocument(name, Global.QSet[k].id, Global.QSet[k].Text, Global.QSet[k].Attribute);
+                }
+            }
+        }
 
     }
     static class Program

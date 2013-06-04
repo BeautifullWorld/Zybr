@@ -17,21 +17,26 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void NotOkButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void OkButton_Click(object sender, EventArgs e)
         {
-            if (File.Exists(textBox1.Text + ".xml")) label1.Text = "База с таким именем уже существует";
-            else if (textBox1.Text.Length<1) label1.Text = "Такое значение не допустимо";
+            if (File.Exists(QSetNameWrite.Text + ".xml")) label1.Text = "База с таким именем уже существует";
+            else if (QSetNameWrite.Text.Length<1) label1.Text = "Такое значение не допустимо";
             else
             {
-                Global.QSetName = textBox1.Text;
+                Global.QSetName = QSetNameWrite.Text;
                 Global.CreateXMLDocument(Global.QSetName);
                 this.Close();
             }
+        }
+
+        private void CreateNewXml_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -14,19 +14,24 @@ namespace WindowsFormsApplication1
         public AreUSurecs()
         {
             InitializeComponent();
-            textBox1.Text = Global.QSetName;
+            QSetNameShow.Text = Global.QSetName;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void OkButton_Click(object sender, EventArgs e)
         {
             Global.AreYouSure = true;
             this.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void NotOkButton_Click(object sender, EventArgs e)
         {
             Global.AreYouSure = false;
             this.Close();
+        }
+
+        private void AreUSurecs_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,59 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.NQ = new System.Windows.Forms.Label();
+            this.QSetNameWrite = new System.Windows.Forms.TextBox();
+            this.NotOkButton = new System.Windows.Forms.Button();
+            this.OkButton = new System.Windows.Forms.Button();
+            this.TopLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // QSetNameWrite
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(12, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(229, 20);
-            this.textBox1.TabIndex = 2;
+            this.QSetNameWrite.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.QSetNameWrite.BackColor = System.Drawing.Color.White;
+            this.QSetNameWrite.Location = new System.Drawing.Point(12, 25);
+            this.QSetNameWrite.Name = "QSetNameWrite";
+            this.QSetNameWrite.Size = new System.Drawing.Size(229, 20);
+            this.QSetNameWrite.TabIndex = 2;
             // 
-            // button1
+            // NotOkButton
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(143, 68);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 32);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Отмена";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.NotOkButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.NotOkButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.NotOkButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NotOkButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.NotOkButton.Location = new System.Drawing.Point(143, 68);
+            this.NotOkButton.Name = "NotOkButton";
+            this.NotOkButton.Size = new System.Drawing.Size(98, 32);
+            this.NotOkButton.TabIndex = 3;
+            this.NotOkButton.Text = "Отмена";
+            this.NotOkButton.UseVisualStyleBackColor = false;
+            this.NotOkButton.Click += new System.EventHandler(this.NotOkButton_Click);
             // 
-            // button2
+            // OkButton
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(12, 68);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 32);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Ок";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.OkButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.OkButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.OkButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.OkButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.OkButton.Location = new System.Drawing.Point(12, 68);
+            this.OkButton.Name = "OkButton";
+            this.OkButton.Size = new System.Drawing.Size(98, 32);
+            this.OkButton.TabIndex = 4;
+            this.OkButton.Text = "Ок";
+            this.OkButton.UseVisualStyleBackColor = false;
+            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
-            // NQ
+            // TopLabel
             // 
-            this.NQ.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.NQ.AutoSize = true;
-            this.NQ.Location = new System.Drawing.Point(12, 9);
-            this.NQ.Name = "NQ";
-            this.NQ.Size = new System.Drawing.Size(185, 13);
-            this.NQ.TabIndex = 9;
-            this.NQ.Text = "Введите имя новой базы вопросов";
+            this.TopLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TopLabel.AutoSize = true;
+            this.TopLabel.Location = new System.Drawing.Point(12, 9);
+            this.TopLabel.Name = "TopLabel";
+            this.TopLabel.Size = new System.Drawing.Size(185, 13);
+            this.TopLabel.TabIndex = 9;
+            this.TopLabel.Text = "Введите имя новой базы вопросов";
             // 
             // label1
             // 
@@ -98,12 +98,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(253, 112);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.NQ);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TopLabel);
+            this.Controls.Add(this.OkButton);
+            this.Controls.Add(this.NotOkButton);
+            this.Controls.Add(this.QSetNameWrite);
             this.Name = "CreateNewXml";
             this.Text = "CreateNewXml";
+            this.Load += new System.EventHandler(this.CreateNewXml_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,10 +112,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label NQ;
+        private System.Windows.Forms.TextBox QSetNameWrite;
+        private System.Windows.Forms.Button NotOkButton;
+        private System.Windows.Forms.Button OkButton;
+        private System.Windows.Forms.Label TopLabel;
         private System.Windows.Forms.Label label1;
     }
 }

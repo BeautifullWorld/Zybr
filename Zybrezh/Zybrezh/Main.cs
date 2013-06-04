@@ -43,15 +43,7 @@ namespace WindowsFormsApplication1
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Global.QSetName != null) //сохраним изменения
-            {
-                File.Delete(Global.QSetName + ".xml"); 
-                Global.CreateXMLDocument(Global.QSetName);
-                for (int i = 0; i < Global.QSet.Count; i++)
-                {
-                    Global.WriteToXMLDocument(Global.QSetName,Global.QSet[i].id,Global.QSet[i].Text,Global.QSet[i].Attribute);
-                }
-            }
+            Global.SaveCurrentChanges(Global.QSetName); //сохраним изменения
         }
     }
 }

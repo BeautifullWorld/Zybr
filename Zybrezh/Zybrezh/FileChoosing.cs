@@ -17,17 +17,22 @@ namespace WindowsFormsApplication1
         public FileChoosing()
         {
             InitializeComponent();
-            if(Global.QSetName!=null) textBox1.Text = Global.QSetName; //еси чё-то уже открыто
+            if (Global.QSetName != null) //еси чё-то уже открыто
+            {
+                textBox1.Text = Global.QSetName;
+                DeletQSetButton.Enabled = true;
+                DeletQSetButton.BackColor = Color.FromArgb(255, 255, 192);
+                RedactirovatButton.Enabled = true;
+                RedactirovatButton.BackColor = Color.FromArgb(255, 255, 192);
+            }
             if (Global.QSet.Count > 0) //еси есть чё показывать
             {
                 QuestionShow.Text = Global.QSet[0].Text; //из нашего крутого списка в текстовую форму
-                NQ.Text = "Вопрос №" + Global.QSet[0].id; //в рамочку наверху
-                button2.Enabled = true;
-                button2.BackColor = Color.FromArgb(255, 255, 192);
-                button3.Enabled = true;
-                button3.BackColor = Color.FromArgb(255, 255, 192);
-                button4.Enabled = true;
-                button4.BackColor = Color.FromArgb(255, 255, 192);
+                NQ.Text = "Вопрос №" + Global.QSet[0].id; //в рамочку наверху                
+                PrevQButton.Enabled = true;
+                PrevQButton.BackColor = Color.FromArgb(255, 255, 192);
+                NextQButton.Enabled = true;
+                NextQButton.BackColor = Color.FromArgb(255, 255, 192);
             }
             else
             {
@@ -42,21 +47,13 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void button1_Click(object sender, EventArgs e) //Открыть
+        private void OpenQSetButton_Click(object sender, EventArgs e) //Открыть
         {
-            if (Global.QSetName != null) //сохраним изменения
-            {
-                File.Delete(Global.QSetName + ".xml");
-                Global.CreateXMLDocument(Global.QSetName);
-                for (int k = 0; k < Global.QSet.Count; k++)
-                {
-                    Global.WriteToXMLDocument(Global.QSetName, Global.QSet[k].id, Global.QSet[k].Text, Global.QSet[k].Attribute);
-                }
-            }
+            Global.SaveCurrentChanges(Global.QSetName); //сохраним изменения
             openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory(); //начать диалог из директории программы
             if (openFileDialog1.ShowDialog() != DialogResult.OK) return; //открыть диалог открытия файла, еси файл не был открыт выйти из процедуры
 
-            FileStream fu = new FileStream(openFileDialog1.FileName, FileMode.Open);
+            FileStream fu = new FileStream(openFileDialog1.FileName, FileMode.Open); //проверим нужный ли это нам файл
             XmlDocument xu = new XmlDocument();
             bool bugfix = false;
             try
@@ -80,6 +77,7 @@ namespace WindowsFormsApplication1
             fu.Close();
             xu.Save(openFileDialog1.FileName);
             bugfix=false;
+
             try
             {
                 if (openFileDialog1.FileName.Remove(openFileDialog1.FileName.Length - openFileDialog1.SafeFileName.Length - 1) != Directory.GetCurrentDirectory()) //FileName - полный путь, ShowFileName - только имя с раширением ( еси файл не из нашей директории )
@@ -98,34 +96,34 @@ namespace WindowsFormsApplication1
                 else Global.QSetName = openFileDialog1.SafeFileName.Remove(openFileDialog1.SafeFileName.Length - 4); //еси наш - просто его имя запоминаем
                 textBox1.Text = Global.QSetName; //обновим
             }
-            catch
+            catch //а я хз может чё нить случится
             {
                 textBox1.Text = "Этот файл не подходит или повреждён";
                 bugfix = true;
             }
             if (bugfix) return;
+
             Global.ReadXMLDocument(Global.QSetName); //прочтём документ который терь 100% в нашей директории
-            i = 0; //обновим еси эо уже не 1 раз открытия файла
+            i = 0; //обновим если это уже не 1 раз открытия файла
             DeletQSetButton.Enabled = true;
             DeletQSetButton.BackColor = Color.FromArgb(255, 255, 192);
-            button2.Enabled = true; //терь можно редактить
-            button2.BackColor = Color.FromArgb(255, 255, 192);
+            RedactirovatButton.Enabled = true; //терь можно редактить
+            RedactirovatButton.BackColor = Color.FromArgb(255, 255, 192);
             if (Global.QSet.Count > 0) //еси есть чё показывать
             {
                 QuestionShow.Text = Global.QSet[0].Text; //из нашего крутого списка в текстовую форму
-                NQ.Text = "Вопрос №" + Global.QSet[0].id; //в рамочку наверху
-                
-                button3.Enabled = true;
-                button3.BackColor = Color.FromArgb(255, 255, 192);
-                button4.Enabled = true;
-                button4.BackColor = Color.FromArgb(255, 255, 192);
+                NQ.Text = "Вопрос №" + Global.QSet[0].id; //в рамочку наверху                
+                PrevQButton.Enabled = true;
+                PrevQButton.BackColor = Color.FromArgb(255, 255, 192);
+                NextQButton.Enabled = true;
+                NextQButton.BackColor = Color.FromArgb(255, 255, 192);
             }
             else
             {
-                button3.Enabled = false;
-                button3.BackColor = Color.Gray;
-                button4.Enabled = false;
-                button4.BackColor = Color.Gray;
+                PrevQButton.Enabled = false;
+                PrevQButton.BackColor = Color.Gray;
+                NextQButton.Enabled = false;
+                NextQButton.BackColor = Color.Gray;
                 QuestionShow.Text = null;
                 NQ.Text = "Вопроcов Нет";
             }
@@ -136,21 +134,21 @@ namespace WindowsFormsApplication1
             this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e) //предыдущий
+        private void PrevQButton_Click(object sender, EventArgs e) //предыдущий
         {
             if (i > 0) i--;
             QuestionShow.Text = Global.QSet[i].Text;
             NQ.Text = "Вопрос №" + Global.QSet[i].id;
         }
 
-        private void button4_Click(object sender, EventArgs e) //следующий
+        private void NextQButton_Click(object sender, EventArgs e) //следующий
         {
             if (i < Global.QSet.Count-1) i++;
             QuestionShow.Text = Global.QSet[i].Text;
             NQ.Text = "Вопрос №" + Global.QSet[i].id;
         }
 
-        private void button2_Click(object sender, EventArgs e) //Редактить
+        private void RedactirovatButton_Click(object sender, EventArgs e) //Редактить
         {
             Form2 Base = new Form2();
             this.Hide();
@@ -162,17 +160,17 @@ namespace WindowsFormsApplication1
             {
                 QuestionShow.Text = Global.QSet[0].Text; //из нашего крутого списка в текстовую форму
                 NQ.Text = "Вопрос №" + Global.QSet[0].id; //в рамочку наверху
-                button3.Enabled = true;
-                button3.BackColor = Color.FromArgb(255, 255, 192);
-                button4.Enabled = true;
-                button4.BackColor = Color.FromArgb(255, 255, 192);
+                PrevQButton.Enabled = true;
+                PrevQButton.BackColor = Color.FromArgb(255, 255, 192);
+                NextQButton.Enabled = true;
+                NextQButton.BackColor = Color.FromArgb(255, 255, 192);
             }
             else
             {
-                button3.Enabled = false;
-                button3.BackColor = Color.Gray;
-                button4.Enabled = false;
-                button4.BackColor = Color.Gray;
+                PrevQButton.Enabled = false;
+                PrevQButton.BackColor = Color.Gray;
+                NextQButton.Enabled = false;
+                NextQButton.BackColor = Color.Gray;
                 QuestionShow.Text = null;
                 NQ.Text = "Вопроcов Нет";
             }
@@ -180,15 +178,7 @@ namespace WindowsFormsApplication1
 
         private void NewQSetButton_Click(object sender, EventArgs e) //Создать
         {
-            if (Global.QSetName != null) //сохраним изменения
-            {
-                File.Delete(Global.QSetName + ".xml");
-                Global.CreateXMLDocument(Global.QSetName);
-                for (int k = 0; k < Global.QSet.Count; k++)
-                {
-                    Global.WriteToXMLDocument(Global.QSetName, Global.QSet[k].id, Global.QSet[k].Text, Global.QSet[k].Attribute);
-                }
-            }
+            Global.SaveCurrentChanges(Global.QSetName); //сохраним изменения
             string Old = Global.QSetName; //чтобы узнать было ли что-то создано
             CreateNewXml New = new CreateNewXml();
             this.Hide();
@@ -200,15 +190,15 @@ namespace WindowsFormsApplication1
             {
                 DeletQSetButton.Enabled = true;
                 DeletQSetButton.BackColor = Color.FromArgb(255, 255, 192);
-                button2.Enabled = true; //тепреь можно редактить раз мы создали
-                button2.BackColor = Color.FromArgb(255, 255, 192);
+                RedactirovatButton.Enabled = true; //тепреь можно редактить раз мы создали
+                RedactirovatButton.BackColor = Color.FromArgb(255, 255, 192);
                 i = 0;
                 textBox1.Text = Global.QSetName; //обновим 
                 Global.ReadXMLDocument(Global.QSetName); //откроем вновь созданный файл
-                button3.Enabled = false; // ну он 100 пудов пустой
-                button3.BackColor = Color.Gray;
-                button4.Enabled = false;
-                button4.BackColor = Color.Gray;
+                PrevQButton.Enabled = false; // ну он 100 пудов пустой
+                PrevQButton.BackColor = Color.Gray;
+                NextQButton.Enabled = false;
+                NextQButton.BackColor = Color.Gray;
                 QuestionShow.Text = null;
                 NQ.Text = "Вопроcов Нет";
             }
@@ -233,15 +223,16 @@ namespace WindowsFormsApplication1
             {
                 File.Delete(Global.QSetName + ".xml");
                 Global.QSetName = null;
+                Global.QSet.Clear();
                 textBox1.Text = Global.QSetName;
                 DeletQSetButton.Enabled = false;
                 DeletQSetButton.BackColor = Color.Gray;
-                button2.Enabled = false;
-                button2.BackColor = Color.Gray;
-                button3.Enabled = false;
-                button3.BackColor = Color.Gray;
-                button4.Enabled = false;
-                button4.BackColor = Color.Gray;
+                RedactirovatButton.Enabled = false;
+                RedactirovatButton.BackColor = Color.Gray;
+                PrevQButton.Enabled = false;
+                PrevQButton.BackColor = Color.Gray;
+                NextQButton.Enabled = false;
+                NextQButton.BackColor = Color.Gray;
                 QuestionShow.Text = null;
                 NQ.Text = "Вопроcов Нет";
             }
