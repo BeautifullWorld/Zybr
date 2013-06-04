@@ -15,11 +15,12 @@ namespace WindowsFormsApplication1
         public Form2()
         {
             InitializeComponent();
-            NQ.Text = "Вопрос №" + (Global.QSet.Count+1); //типа следующий же
+            if (Global.QSet.Count == 0) NQ.Text = "Вопрос №1";
+            else NQ.Text = "Вопрос №" + ((Convert.ToInt32(Global.QSet[Global.QSet.Count - 1].id) + 1).ToString());
             if (Global.QSet.Count > 0)
             {
                 for(int i=0; i<Global.QSet.Count; i++)
-                    listBox1.Items.Add(Global.QSet[i].Text);
+                    listBox1.Items.Add(Global.QSet[i].id+") "+ Global.QSet[i].Text);
             }
         }
 
@@ -33,11 +34,13 @@ namespace WindowsFormsApplication1
             Global.Question New = new Global.Question(); //новый вопрос создался однако
             New.Text = QuestionWrite.Text;
             New.Attribute = 69; //ибо я пошлый
-            New.id = Global.QSet.Count.ToString(); //новый же вопрос сюда пихаем потом надо доработать что новый необязон последний ну или я хз чё
-            listBox1.Items.Add(New.Text);
+            if (Global.QSet.Count == 0) New.id = "1";
+            else New.id = (Convert.ToInt32(Global.QSet[Global.QSet.Count - 1].id) + 1).ToString();
+            listBox1.Items.Add(New.id+") "+New.Text);
             Global.QSet.Add(New); //в список его!
             QuestionWrite.Text = null; //обновим
-            NQ.Text = "Вопрос №" + (Global.QSet.Count + 1);
+            if (Global.QSet.Count == 0) NQ.Text = "Вопрос №1";
+            else NQ.Text = "Вопрос №" + ((Convert.ToInt32(Global.QSet[Global.QSet.Count - 1].id) + 1).ToString());
         }
 
         private void End_Click(object sender, EventArgs e)
@@ -59,7 +62,8 @@ namespace WindowsFormsApplication1
         {
             Global.QSet.RemoveAt(listBox1.SelectedIndex);
             listBox1.Items.RemoveAt(listBox1.SelectedIndex);
-            NQ.Text = "Вопрос №" + (Global.QSet.Count + 1);
+            if (Global.QSet.Count == 0) NQ.Text = "Вопрос №1";
+            else NQ.Text = "Вопрос №" + ((Convert.ToInt32(Global.QSet[Global.QSet.Count - 1].id) + 1).ToString());
         }
 
         public void Change_Click(object sender, EventArgs e)//изменить
