@@ -42,7 +42,7 @@
             this.QuestionWrite.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.QuestionWrite.Location = new System.Drawing.Point(16, 25);
             this.QuestionWrite.Name = "QuestionWrite";
-            this.QuestionWrite.Size = new System.Drawing.Size(304, 45);
+            this.QuestionWrite.Size = new System.Drawing.Size(431, 180);
             this.QuestionWrite.TabIndex = 0;
             this.QuestionWrite.Text = "";
             // 
