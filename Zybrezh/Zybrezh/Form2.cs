@@ -12,16 +12,23 @@ namespace WindowsFormsApplication1
 {
     public partial class Form2 : Form
     {
+        public void FillDataGridView(List<Global.Question> Q) //заполняет таблицу-список
+        {
+            dataGridView1.Rows.Clear();
+            for (int i = 0; i < Q.Count; i++)
+            {
+                int n = Convert.ToInt32(Q[i].id) + 1;
+                dataGridView1.Rows.Add( n.ToString(), Q[i].Text);
+            }
+        }
+
         public Form2()
         {
             InitializeComponent();
-            NQ.Text = "Вопрос №" + (Global.QSet.Count+1); //типа следующий же
+            textBox1.Text = (Global.QSet.Count+1) + ""; //типа следующий же
             if (Global.QSet.Count > 0)
             {
-                for (int i = 0; i < Global.QSet.Count; i++)
-                {
-                    dataGridView1.Rows.Add(Global.QSet[i].id+1, Global.QSet[i].Text);
-                }
+                FillDataGridView(Global.QSet);
             }
         }
 
@@ -35,11 +42,25 @@ namespace WindowsFormsApplication1
             Global.Question New = new Global.Question(); //новый вопрос создался однако
             New.Text = QuestionWrite.Text;
             New.Attribute = 69; //ибо я пошлый
-            New.id = Global.QSet.Count.ToString(); //новый же вопрос сюда пихаем потом надо доработать что новый необязон последний ну или я хз чё
-            dataGridView1.Rows.Add(New.id, New.Text);
-            Global.QSet.Add(New); //в список его!
+            New.id = (Convert.ToInt32(textBox1.Text)-1).ToString();//вот такие конструкции приходится строить из-за того, что id - это string
+            int n = Convert.ToInt32(New.id);
+            dataGridView1.Rows.Add( (n+1).ToString(), New.Text);
+            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
+            try         //тут индекс постоянно за пределы выходил
+            {
+                Global.QSet.Insert(n, New); //в список его!
+            }
+            catch
+            {
+                ErrorForm Ups = new ErrorForm(this);
+                Ups.ShowDialog();
+                Ups.Close();
+                string que = New.Text;
+                dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+                this.Show();
+            }
             QuestionWrite.Text = null; //обновим
-            NQ.Text = "Вопрос №" + (Global.QSet.Count + 1);
+            textBox1.Text = (Global.QSet.Count + 1) + "";
         }
 
         private void End_Click(object sender, EventArgs e)
@@ -55,22 +76,45 @@ namespace WindowsFormsApplication1
                 dataGridView1.Rows.RemoveAt(ind);
                 Global.QSet.RemoveAt(ind);
             }
-            NQ.Text = "Вопрос №" + (Global.QSet.Count + 1);
+            textBox1.Text = (Global.QSet.Count + 1) + "";
         }
 
         public void Change_Click(object sender, EventArgs e)//изменить
         {
             QChanging QChanging = new QChanging(this);
             this.Hide();
+            int index = dataGridView1.CurrentRow.Index;
             QChanging.ShowDialog();
             QChanging.Close();
-            dataGridView1.CurrentRow.Cells[0].Value = QChanging.textBox1.Text;
-            int ind = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
             Global.Question New = new Global.Question();
-            New.id = ind.ToString();
-            New.Text = QChanging.QuestionWrite.Text;
-            Global.QSet.Insert(ind, New);
-            dataGridView1.CurrentRow.Cells[1].Value = QChanging.QuestionWrite.Text;
+            try    //аналогично
+            {
+                int ind = Convert.ToInt32(QChanging.textBox1.Text);
+                New.id = (ind-1).ToString();
+                New.Text = QChanging.QuestionWrite.Text;
+                dataGridView1.Rows.RemoveAt(index);
+                Global.QSet.RemoveAt(index);
+                dataGridView1.Rows.Add(ind.ToString(), New.Text);
+                Global.QSet.Insert(ind - 1, New);
+                /*int n2=Convert.ToInt32(Global.QSet[ind-1].id); //пусть пока побудет здесь, а то баг, который этот кусок кода исправлял
+                for(int i=0;i<Global.QSet.Count;i++)             //благополучно исчез, может скоро вернется
+                {
+                    int n1=Convert.ToInt32(Global.QSet[i].id);
+                    if (n1 >= n2 && Global.QSet[i] != Global.QSet[ind - 1])
+                    {
+                        Global.QSet[i].id = (n1 - 1).ToString();
+                    }
+                }*/
+            }
+            catch
+            {
+                ErrorForm Ups = new ErrorForm(this);
+                Ups.ShowDialog();
+                Ups.Close();
+                string que = New.Text;
+                Change_Click(que, EventArgs.Empty);
+            }
+            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
             this.Show();
         }
     }

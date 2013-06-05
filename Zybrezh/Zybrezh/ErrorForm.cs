@@ -17,6 +17,12 @@ namespace WindowsFormsApplication1
             textBox1.Text = "Этот файл не подходит или повреждён";
         }
 
+        public ErrorForm(Form2 f2)//думаю перегрузка лучше, чем новая форма
+        {
+            InitializeComponent();
+            textBox1.Text = "Неверное значение индекса";
+        }
+            
         private void BackButton_Click(object sender, EventArgs e)
         {
             this.Close();

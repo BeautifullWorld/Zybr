@@ -15,6 +15,8 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
             textBox1.Text = f2.dataGridView1.CurrentRow.Cells[0].Value + "";
+            if (textBox1.Text == null)
+                textBox1.Text = (Global.QSet.Count + 1).ToString();
             QuestionWrite.Text = f2.dataGridView1.CurrentRow.Cells[1].Value + "";
         }
 

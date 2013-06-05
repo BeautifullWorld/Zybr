@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.QuestionWrite = new System.Windows.Forms.RichTextBox();
             this.End = new System.Windows.Forms.Button();
             this.Next = new System.Windows.Forms.Button();
@@ -35,6 +36,7 @@
             this.Delete = new System.Windows.Forms.Button();
             this.Change = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Question = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -43,7 +45,7 @@
             // QuestionWrite
             // 
             this.QuestionWrite.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.QuestionWrite.Location = new System.Drawing.Point(16, 25);
+            this.QuestionWrite.Location = new System.Drawing.Point(16, 32);
             this.QuestionWrite.Name = "QuestionWrite";
             this.QuestionWrite.Size = new System.Drawing.Size(304, 45);
             this.QuestionWrite.TabIndex = 0;
@@ -72,7 +74,7 @@
             this.Next.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Next.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Next.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Next.Location = new System.Drawing.Point(204, 76);
+            this.Next.Location = new System.Drawing.Point(204, 83);
             this.Next.Name = "Next";
             this.Next.Size = new System.Drawing.Size(116, 30);
             this.Next.TabIndex = 5;
@@ -86,9 +88,9 @@
             this.NQ.AutoSize = true;
             this.NQ.Location = new System.Drawing.Point(13, 9);
             this.NQ.Name = "NQ";
-            this.NQ.Size = new System.Drawing.Size(44, 13);
+            this.NQ.Size = new System.Drawing.Size(58, 13);
             this.NQ.TabIndex = 6;
-            this.NQ.Text = "Вопрос";
+            this.NQ.Text = "Вопрос №";
             // 
             // Delete
             // 
@@ -122,18 +124,35 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Question});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 112);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 119);
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.DefaultCellStyle.NullValue = "0";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(304, 205);
             this.dataGridView1.TabIndex = 11;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(72, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(30, 20);
+            this.textBox1.TabIndex = 12;
             // 
             // Id
             // 
@@ -154,6 +173,7 @@
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.books228577dtg3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(332, 377);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Change);
             this.Controls.Add(this.Delete);
@@ -178,6 +198,7 @@
         private System.Windows.Forms.Label NQ;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Button Change;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Question;
         public System.Windows.Forms.DataGridView dataGridView1;
