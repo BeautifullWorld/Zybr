@@ -195,6 +195,8 @@
             this.Controls.Add(this.NewQSetButton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.OpenQSetButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FileChoosing";
             this.Text = "База Вопросов";
             this.Load += new System.EventHandler(this.FileChoosing_Load);

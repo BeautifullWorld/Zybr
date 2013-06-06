@@ -107,6 +107,8 @@
             this.Controls.Add(this.QSetNameShow);
             this.Controls.Add(this.SureLabel);
             this.Controls.Add(this.TopLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "AreUSurecs";
             this.Text = "Вы Уверены?";
             this.Load += new System.EventHandler(this.AreUSurecs_Load);

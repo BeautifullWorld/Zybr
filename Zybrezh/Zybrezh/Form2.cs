@@ -22,13 +22,34 @@ namespace WindowsFormsApplication1
             }
         }
 
+        public int MaxIndex(List<Global.Question> Q)
+        {
+            int max = 0, num;
+            if (Q.Count > 0)
+            {
+                max = Convert.ToInt32(Q[0].id);
+                for (int i = 1; i < Q.Count; i++)
+                {
+                    num = Convert.ToInt32(Q[i].id);
+                    if (max < num)
+                        max = num;
+                }
+            }
+            else max--;
+            return max+1;
+        }
+
         public Form2()
         {
             InitializeComponent();
-            textBox1.Text = (Global.QSet.Count+1) + ""; //типа следующий же
+            textBox1.Text = (MaxIndex(Global.QSet)+1) + ""; //типа следующий же
             if (Global.QSet.Count > 0)
             {
                 FillDataGridView(Global.QSet);
+                Delete.BackColor = Color.FromArgb(255, 255, 192);
+                Delete.Enabled = true;
+                Change.BackColor = Color.FromArgb(255, 255, 192);
+                Change.Enabled = true;
             }
         }
 
@@ -56,11 +77,11 @@ namespace WindowsFormsApplication1
                 Ups.ShowDialog();
                 Ups.Close();
                 string que = New.Text;
-                dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+                dataGridView1.Rows.RemoveAt(dataGridView1.Rows.GetLastRow(DataGridViewElementStates.Displayed));
                 this.Show();
             }
             QuestionWrite.Text = null; //обновим
-            textBox1.Text = (Global.QSet.Count + 1) + "";
+            textBox1.Text = (MaxIndex(Global.QSet) + 1) + "";
         }
 
         private void End_Click(object sender, EventArgs e)
@@ -76,7 +97,7 @@ namespace WindowsFormsApplication1
                 dataGridView1.Rows.RemoveAt(ind);
                 Global.QSet.RemoveAt(ind);
             }
-            textBox1.Text = (Global.QSet.Count + 1) + "";
+            textBox1.Text = (MaxIndex(Global.QSet) + 1) + "";
         }
 
         public void Change_Click(object sender, EventArgs e)//изменить
@@ -96,15 +117,6 @@ namespace WindowsFormsApplication1
                 Global.QSet.RemoveAt(index);
                 dataGridView1.Rows.Add(ind.ToString(), New.Text);
                 Global.QSet.Insert(ind - 1, New);
-                /*int n2=Convert.ToInt32(Global.QSet[ind-1].id); //пусть пока побудет здесь, а то баг, который этот кусок кода исправлял
-                for(int i=0;i<Global.QSet.Count;i++)             //благополучно исчез, может скоро вернется
-                {
-                    int n1=Convert.ToInt32(Global.QSet[i].id);
-                    if (n1 >= n2 && Global.QSet[i] != Global.QSet[ind - 1])
-                    {
-                        Global.QSet[i].id = (n1 - 1).ToString();
-                    }
-                }*/
             }
             catch
             {
@@ -115,6 +127,7 @@ namespace WindowsFormsApplication1
                 Change_Click(que, EventArgs.Empty);
             }
             dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
+            textBox1.Text = (MaxIndex(Global.QSet) + 1) + "";
             this.Show();
         }
     }

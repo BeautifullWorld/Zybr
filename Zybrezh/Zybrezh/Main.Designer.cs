@@ -71,6 +71,8 @@
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.BaseButton);
             this.Controls.Add(this.StartButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "ЗубрЗубр!";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);

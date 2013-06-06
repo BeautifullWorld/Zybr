@@ -81,6 +81,8 @@
             this.Controls.Add(this.Save);
             this.Controls.Add(this.NQ);
             this.Controls.Add(this.QuestionWrite);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "QChanging";
             this.Text = "Изменить вопрос";
             this.ResumeLayout(false);

@@ -63,6 +63,8 @@
             this.ClientSize = new System.Drawing.Size(284, 81);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.BackButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "ErrorForm";
             this.Text = "Ошибка";
             this.ResumeLayout(false);

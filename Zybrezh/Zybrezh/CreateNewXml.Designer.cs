@@ -102,6 +102,8 @@
             this.Controls.Add(this.OkButton);
             this.Controls.Add(this.NotOkButton);
             this.Controls.Add(this.QSetNameWrite);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "CreateNewXml";
             this.Text = "CreateNewXml";
             this.Load += new System.EventHandler(this.CreateNewXml_Load);

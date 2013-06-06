@@ -118,6 +118,8 @@
             this.Controls.Add(this.End);
             this.Controls.Add(this.NotOkButton);
             this.Controls.Add(this.OkButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Зубрим";
             this.Load += new System.EventHandler(this.Form1_Load);
