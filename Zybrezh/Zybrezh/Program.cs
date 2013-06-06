@@ -16,7 +16,17 @@ namespace WindowsFormsApplication1
             public string id; //string ибо так проще
             public string Text;
             public int Attribute; //хз-зачем пока
+
+
+            public class SortByName : IComparer<Global.Question>
+            {
+                public int Compare(Global.Question x, Global.Question y)
+                {
+                    return x.id.CompareTo(y.id);
+                }
+            }
         }
+
         public static string QSetName = null;
         public static bool AreYouSure = false;
         public static List<Question> QSet = new List<Question>(); //походу удобный список ибо обращаться можно как к массиву
