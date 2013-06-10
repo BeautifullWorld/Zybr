@@ -33,6 +33,7 @@
             this.End = new System.Windows.Forms.Button();
             this.QuestionShow = new System.Windows.Forms.RichTextBox();
             this.NQ = new System.Windows.Forms.Label();
+            this.MaybeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // OkButton
@@ -44,9 +45,9 @@
             this.OkButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OkButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.OkButton.Location = new System.Drawing.Point(199, 177);
+            this.OkButton.Location = new System.Drawing.Point(231, 177);
             this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(107, 45);
+            this.OkButton.Size = new System.Drawing.Size(75, 45);
             this.OkButton.TabIndex = 1;
             this.OkButton.Text = "Знаю";
             this.OkButton.UseVisualStyleBackColor = false;
@@ -63,7 +64,7 @@
             this.NotOkButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.NotOkButton.Location = new System.Drawing.Point(12, 177);
             this.NotOkButton.Name = "NotOkButton";
-            this.NotOkButton.Size = new System.Drawing.Size(107, 45);
+            this.NotOkButton.Size = new System.Drawing.Size(106, 45);
             this.NotOkButton.TabIndex = 2;
             this.NotOkButton.Text = "Не Знаю";
             this.NotOkButton.UseVisualStyleBackColor = false;
@@ -105,6 +106,23 @@
             this.NQ.TabIndex = 5;
             this.NQ.Text = "Вопрос";
             // 
+            // MaybeButton
+            // 
+            this.MaybeButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MaybeButton.BackColor = System.Drawing.Color.Gold;
+            this.MaybeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MaybeButton.FlatAppearance.BorderSize = 0;
+            this.MaybeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.MaybeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MaybeButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.MaybeButton.Location = new System.Drawing.Point(127, 177);
+            this.MaybeButton.Name = "MaybeButton";
+            this.MaybeButton.Size = new System.Drawing.Size(85, 45);
+            this.MaybeButton.TabIndex = 6;
+            this.MaybeButton.Text = "Почти";
+            this.MaybeButton.UseVisualStyleBackColor = false;
+            this.MaybeButton.Click += new System.EventHandler(this.MaybeButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -113,6 +131,7 @@
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.books228577dtg3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(319, 271);
+            this.Controls.Add(this.MaybeButton);
             this.Controls.Add(this.NQ);
             this.Controls.Add(this.QuestionShow);
             this.Controls.Add(this.End);
@@ -135,6 +154,7 @@
         private System.Windows.Forms.Button End;
         private System.Windows.Forms.RichTextBox QuestionShow;
         private System.Windows.Forms.Label NQ;
+        private System.Windows.Forms.Button MaybeButton;
 
     }
 }

@@ -12,6 +12,7 @@ namespace WindowsFormsApplication1
 {
     public partial class Form2 : Form
     {
+        ////////////////////////////////////////////////////////////////////////////////
         public void FillDataGridView(List<Global.Question> Q) //заполняет таблицу-список
         {
             dataGridView1.Rows.Clear();
@@ -21,7 +22,7 @@ namespace WindowsFormsApplication1
             }
             dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
         }
-
+        ////////////////////////////////////////////
         public int MaxIndex(List<Global.Question> Q)
         {
             int max = 0, num1, num2;
@@ -63,16 +64,25 @@ namespace WindowsFormsApplication1
 
         private void Next_Click(object sender, EventArgs e) //Добавить
         {
-            Global.Question New = new Global.Question(); //новый вопрос создался однако
+            Global.Question New = new Global.Question();
             New.Text = QuestionWrite.Text;
-            New.Attribute = 69; //ибо я пошлый
+            New.Queue_place = Global.LastPlaceInQueue("A");
             New.id = textBox1.Text;
+            New.Queue_name = "A";
+            New.ratio = null;
             dataGridView1.Rows.Add(New.id, New.Text);
             dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
             Global.QSet.Add(New);
             Global.QSet.Sort(new Global.Question.SortByName());
             QuestionWrite.Text = null; //обновим
             textBox1.Text = (MaxIndex(Global.QSet) + 1) + "";
+            if (Global.QSet.Count > 0)
+            {
+                Delete.BackColor = Color.FromArgb(255, 255, 192);
+                Delete.Enabled = true;
+                Change.BackColor = Color.FromArgb(255, 255, 192);
+                Change.Enabled = true;
+            }
         }
 
         private void End_Click(object sender, EventArgs e)
@@ -89,12 +99,21 @@ namespace WindowsFormsApplication1
                 Global.Question New = new Global.Question();
                 New = Global.QSet.Find(p => p.id == ind);
                 dataGridView1.Rows.Remove(r);
+                Global.CorrectErrorInQueue(New.Queue_name, New.Queue_place);
                 Global.QSet.Remove(New);
+                
             }
             textBox1.Text = (MaxIndex(Global.QSet) + 1) + "";
+            if (Global.QSet.Count == 0)
+            {
+                Delete.BackColor = Color.Gray;
+                Delete.Enabled = false;
+                Change.BackColor = Color.Gray;
+                Change.Enabled = false;
+            }
         }
 
-        public void Change_Click(object sender, EventArgs e)//изменить
+        public void Change_Click(object sender, EventArgs e)//ТУТ НАДО ПРОВЕРИТЬ НЕ ПОРТЯТСЯ ЛИ НОВЫЕ АТРИБУТЫ!!!
         {
             QChanging QChanging = new QChanging(this);
             this.Hide();
