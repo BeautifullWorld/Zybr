@@ -24,24 +24,30 @@ namespace WindowsFormsApplication1
         ////////////////////////////////////////////
         public int MaxIndex(List<Global.Question> Q)
         {
-            int max = 0, num1, num2;
+            int max = 0, num1;
             if (Q.Count > 0)
             {
                 max = Convert.ToInt32(Q[0].id);
-                if (max != 1) return 0;
-                num2 = max;
                 for (int i = 1; i < Q.Count; i++)
                 {
                     num1 = Convert.ToInt32(Q[i].id);
-                    if (num2 == num1) num2--;
-                    if (num1 != num2 + 1) return num2;
                     if (max < num1)
                         max = num1;
-                    num2 = num1;
                 }
             }
             return max;
         }
+        /////////////////////////////////
+        public bool IndexExists(string a)
+        {
+            bool b = false;
+            for (int i = 0; i < Global.QSet.Count; i++)
+            {
+                if (Global.QSet[i].id == a) b = true;
+            }
+            return b;
+        }
+
 
         public Form2()
         {
@@ -64,6 +70,12 @@ namespace WindowsFormsApplication1
 
         private void Next_Click(object sender, EventArgs e) //Добавить
         {
+
+            if (IndexExists(textBox1.Text))
+            {
+                MessageBox.Show("Вопрос с таким номером уже существует!");
+                return;
+            }
             Global.Question New = new Global.Question();
             New.Text = QuestionWrite.Text;
             New.Queue_place = Global.LastPlaceInQueue("A");
@@ -113,7 +125,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        public void Change_Click(object sender, EventArgs e)//ТУТ НАДО ПРОВЕРИТЬ НЕ ПОРТЯТСЯ ЛИ НОВЫЕ АТРИБУТЫ!!!  вроде, нет
+        public void Change_Click(object sender, EventArgs e)
         {
             QChanging QChanging = new QChanging(this);
             this.Hide();

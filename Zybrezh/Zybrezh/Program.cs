@@ -19,7 +19,7 @@ namespace WindowsFormsApplication1
             public string Queue_name; // "A" "B" "C"
             public string ratio; // типа "NNMMY"
 
-            public class SortById : IComparer<Global.Question> // ни в коем случае не удалять
+            public class SortById : IComparer<Global.Question>
             {
                 public int Compare(Global.Question x, Global.Question y)
                 {
@@ -51,8 +51,13 @@ namespace WindowsFormsApplication1
                     if (ratio[i] == 'M') M = M + 1;
                     if (ratio[i] == 'N') N = N + 1;
                 }
-                s = (((Y + M / 2) / (Y + M + N))*100).ToString();
-                if (s.Length > 4) s = s.Remove(4); //с точностью до 100-ых
+                if (Y + N + M == 0) return "0%";
+                if (ratio.Length == 1)
+                {
+                    s = (((Y + M / 2) / (2*(Y + M + N))) * 100).ToString();
+                }
+                else s = (((Y + M / 2) / (Y + M + N)) * 100).ToString();
+                if (s.Length > 4) s = s.Remove(4); //с точностью до 10-ых
                 return s + "%";
             }
             else return "0%";
@@ -172,7 +177,7 @@ namespace WindowsFormsApplication1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main()); //запускаем форму Main - далее идём Main.cs
+            Application.Run(new Main());
         }
     }
 }

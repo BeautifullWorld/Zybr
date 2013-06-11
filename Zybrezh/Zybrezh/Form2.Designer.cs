@@ -36,10 +36,10 @@
             this.Delete = new System.Windows.Forms.Button();
             this.Change = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Question = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rating = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,13 +154,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(343, 205);
             this.dataGridView1.TabIndex = 11;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(80, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(30, 20);
-            this.textBox1.TabIndex = 12;
-            // 
             // Id
             // 
             this.Id.HeaderText = "№";
@@ -178,6 +171,13 @@
             this.Rating.HeaderText = "Выучен        на";
             this.Rating.Name = "Rating";
             this.Rating.Width = 57;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(80, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(30, 20);
+            this.textBox1.TabIndex = 12;
             // 
             // Form2
             // 
@@ -197,6 +197,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Что будем Зубрить?";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

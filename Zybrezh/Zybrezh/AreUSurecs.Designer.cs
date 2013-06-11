@@ -77,7 +77,7 @@
             this.NotOkButton.Name = "NotOkButton";
             this.NotOkButton.Size = new System.Drawing.Size(108, 32);
             this.NotOkButton.TabIndex = 8;
-            this.NotOkButton.Text = "Нет, Что я творю?";
+            this.NotOkButton.Text = "Нет";
             this.NotOkButton.UseVisualStyleBackColor = false;
             this.NotOkButton.Click += new System.EventHandler(this.NotOkButton_Click);
             // 
@@ -110,6 +110,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "AreUSurecs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Вы Уверены?";
             this.Load += new System.EventHandler(this.AreUSurecs_Load);
             this.ResumeLayout(false);

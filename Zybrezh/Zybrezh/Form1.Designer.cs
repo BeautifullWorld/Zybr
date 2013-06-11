@@ -48,11 +48,11 @@
             this.OkButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OkButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.OkButton.Location = new System.Drawing.Point(221, 35);
+            this.OkButton.Location = new System.Drawing.Point(205, 35);
             this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(68, 45);
+            this.OkButton.Size = new System.Drawing.Size(87, 45);
             this.OkButton.TabIndex = 1;
-            this.OkButton.Text = "Да";
+            this.OkButton.Text = "Хорошо";
             this.OkButton.UseVisualStyleBackColor = false;
             this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
@@ -65,11 +65,11 @@
             this.NotOkButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.NotOkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NotOkButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.NotOkButton.Location = new System.Drawing.Point(16, 35);
+            this.NotOkButton.Location = new System.Drawing.Point(6, 35);
             this.NotOkButton.Name = "NotOkButton";
-            this.NotOkButton.Size = new System.Drawing.Size(67, 45);
+            this.NotOkButton.Size = new System.Drawing.Size(87, 45);
             this.NotOkButton.TabIndex = 2;
-            this.NotOkButton.Text = "Нет";
+            this.NotOkButton.Text = "Плохо";
             this.NotOkButton.UseVisualStyleBackColor = false;
             this.NotOkButton.Click += new System.EventHandler(this.NotOkButton_Click);
             // 
@@ -81,7 +81,7 @@
             this.End.FlatAppearance.BorderSize = 0;
             this.End.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.End.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.End.Location = new System.Drawing.Point(119, 265);
+            this.End.Location = new System.Drawing.Point(113, 265);
             this.End.Name = "End";
             this.End.Size = new System.Drawing.Size(93, 25);
             this.End.TabIndex = 3;
@@ -118,11 +118,11 @@
             this.MaybeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.MaybeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MaybeButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.MaybeButton.Location = new System.Drawing.Point(114, 35);
+            this.MaybeButton.Location = new System.Drawing.Point(107, 35);
             this.MaybeButton.Name = "MaybeButton";
-            this.MaybeButton.Size = new System.Drawing.Size(80, 45);
+            this.MaybeButton.Size = new System.Drawing.Size(87, 45);
             this.MaybeButton.TabIndex = 6;
-            this.MaybeButton.Text = "Почти";
+            this.MaybeButton.Text = "Так себе";
             this.MaybeButton.UseVisualStyleBackColor = false;
             this.MaybeButton.Click += new System.EventHandler(this.MaybeButton_Click);
             // 
@@ -146,7 +146,7 @@
             this.groupBox1.Size = new System.Drawing.Size(298, 96);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Выучили?";
+            this.groupBox1.Text = "Оцените Ваш ответ:";
             // 
             // Form1
             // 
@@ -164,6 +164,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Зубрим";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
