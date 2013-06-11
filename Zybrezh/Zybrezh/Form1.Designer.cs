@@ -34,6 +34,9 @@
             this.QuestionShow = new System.Windows.Forms.RichTextBox();
             this.NQ = new System.Windows.Forms.Label();
             this.MaybeButton = new System.Windows.Forms.Button();
+            this.showRating = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // OkButton
@@ -43,13 +46,13 @@
             this.OkButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OkButton.FlatAppearance.BorderSize = 0;
             this.OkButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.OkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OkButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.OkButton.Location = new System.Drawing.Point(231, 177);
+            this.OkButton.Location = new System.Drawing.Point(221, 35);
             this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(75, 45);
+            this.OkButton.Size = new System.Drawing.Size(68, 45);
             this.OkButton.TabIndex = 1;
-            this.OkButton.Text = "Знаю";
+            this.OkButton.Text = "Да";
             this.OkButton.UseVisualStyleBackColor = false;
             this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
@@ -60,13 +63,13 @@
             this.NotOkButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.NotOkButton.FlatAppearance.BorderSize = 0;
             this.NotOkButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.NotOkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NotOkButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NotOkButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.NotOkButton.Location = new System.Drawing.Point(12, 177);
+            this.NotOkButton.Location = new System.Drawing.Point(16, 35);
             this.NotOkButton.Name = "NotOkButton";
-            this.NotOkButton.Size = new System.Drawing.Size(106, 45);
+            this.NotOkButton.Size = new System.Drawing.Size(67, 45);
             this.NotOkButton.TabIndex = 2;
-            this.NotOkButton.Text = "Не Знаю";
+            this.NotOkButton.Text = "Нет";
             this.NotOkButton.UseVisualStyleBackColor = false;
             this.NotOkButton.Click += new System.EventHandler(this.NotOkButton_Click);
             // 
@@ -78,9 +81,9 @@
             this.End.FlatAppearance.BorderSize = 0;
             this.End.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.End.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.End.Location = new System.Drawing.Point(116, 234);
+            this.End.Location = new System.Drawing.Point(119, 265);
             this.End.Name = "End";
-            this.End.Size = new System.Drawing.Size(86, 25);
+            this.End.Size = new System.Drawing.Size(93, 25);
             this.End.TabIndex = 3;
             this.End.Text = "Закончим";
             this.End.UseVisualStyleBackColor = false;
@@ -92,7 +95,7 @@
             this.QuestionShow.Location = new System.Drawing.Point(12, 32);
             this.QuestionShow.Name = "QuestionShow";
             this.QuestionShow.ReadOnly = true;
-            this.QuestionShow.Size = new System.Drawing.Size(294, 123);
+            this.QuestionShow.Size = new System.Drawing.Size(298, 110);
             this.QuestionShow.TabIndex = 4;
             this.QuestionShow.Text = "";
             // 
@@ -100,7 +103,7 @@
             // 
             this.NQ.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NQ.AutoSize = true;
-            this.NQ.Location = new System.Drawing.Point(12, 16);
+            this.NQ.Location = new System.Drawing.Point(13, 16);
             this.NQ.Name = "NQ";
             this.NQ.Size = new System.Drawing.Size(44, 13);
             this.NQ.TabIndex = 5;
@@ -113,15 +116,37 @@
             this.MaybeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MaybeButton.FlatAppearance.BorderSize = 0;
             this.MaybeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.MaybeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MaybeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MaybeButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.MaybeButton.Location = new System.Drawing.Point(127, 177);
+            this.MaybeButton.Location = new System.Drawing.Point(114, 35);
             this.MaybeButton.Name = "MaybeButton";
-            this.MaybeButton.Size = new System.Drawing.Size(85, 45);
+            this.MaybeButton.Size = new System.Drawing.Size(80, 45);
             this.MaybeButton.TabIndex = 6;
             this.MaybeButton.Text = "Почти";
             this.MaybeButton.UseVisualStyleBackColor = false;
             this.MaybeButton.Click += new System.EventHandler(this.MaybeButton_Click);
+            // 
+            // showRating
+            // 
+            this.showRating.AutoSize = true;
+            this.showRating.Location = new System.Drawing.Point(83, 16);
+            this.showRating.Name = "showRating";
+            this.showRating.Size = new System.Drawing.Size(0, 13);
+            this.showRating.TabIndex = 7;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBox1.Controls.Add(this.NotOkButton);
+            this.groupBox1.Controls.Add(this.MaybeButton);
+            this.groupBox1.Controls.Add(this.OkButton);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 163);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(298, 96);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Выучили?";
             // 
             // Form1
             // 
@@ -130,18 +155,18 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.books228577dtg3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(319, 271);
-            this.Controls.Add(this.MaybeButton);
+            this.ClientSize = new System.Drawing.Size(326, 319);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.showRating);
             this.Controls.Add(this.NQ);
             this.Controls.Add(this.QuestionShow);
             this.Controls.Add(this.End);
-            this.Controls.Add(this.NotOkButton);
-            this.Controls.Add(this.OkButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Зубрим";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,6 +180,8 @@
         private System.Windows.Forms.RichTextBox QuestionShow;
         private System.Windows.Forms.Label NQ;
         private System.Windows.Forms.Button MaybeButton;
+        private System.Windows.Forms.Label showRating;
+        private System.Windows.Forms.GroupBox groupBox1;
 
     }
 }

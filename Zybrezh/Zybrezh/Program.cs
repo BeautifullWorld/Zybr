@@ -19,11 +19,13 @@ namespace WindowsFormsApplication1
             public string Queue_name; // "A" "B" "C"
             public string ratio; // типа "NNMMY"
 
-            public class SortByName : IComparer<Global.Question> // МОЖЕТ УБРАТЬ ЕГО ОТСЮДА???
+            public class SortById : IComparer<Global.Question> // ни в коем случае не удалять
             {
                 public int Compare(Global.Question x, Global.Question y)
                 {
-                    return x.id.CompareTo(y.id);
+                    int n = Convert.ToInt32(x.id);
+                    int m = Convert.ToInt32(y.id);
+                    return n.CompareTo(m);
                 }
             }
         }
@@ -49,11 +51,11 @@ namespace WindowsFormsApplication1
                     if (ratio[i] == 'M') M = M + 1;
                     if (ratio[i] == 'N') N = N + 1;
                 }
-                s = ((Y + M / 2) / (Y + M + N)).ToString();
+                s = (((Y + M / 2) / (Y + M + N))*100).ToString();
                 if (s.Length > 4) s = s.Remove(4); //с точностью до 100-ых
-                return s;
+                return s + "%";
             }
-            else return "0";
+            else return "0%";
         }
         ////////////////////////////////////////////////////////////////////////////////////////
         public static int LastPlaceInQueue(string Queue_name) //место ПОСЛЕ последнего в очереди

@@ -39,6 +39,7 @@
             this.NextQButton = new System.Windows.Forms.Button();
             this.NQ = new System.Windows.Forms.Label();
             this.DeletQSetButton = new System.Windows.Forms.Button();
+            this.showRating = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -114,6 +115,7 @@
             // 
             // QuestionShow
             // 
+            this.QuestionShow.AccessibleDescription = "";
             this.QuestionShow.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.QuestionShow.Location = new System.Drawing.Point(12, 93);
             this.QuestionShow.Name = "QuestionShow";
@@ -178,6 +180,17 @@
             this.DeletQSetButton.UseVisualStyleBackColor = false;
             this.DeletQSetButton.Click += new System.EventHandler(this.DeletQSetButton_Click);
             // 
+            // showRating
+            // 
+            this.showRating.AccessibleDescription = "";
+            this.showRating.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.showRating.AutoSize = true;
+            this.showRating.Cursor = System.Windows.Forms.Cursors.Default;
+            this.showRating.Location = new System.Drawing.Point(88, 77);
+            this.showRating.Name = "showRating";
+            this.showRating.Size = new System.Drawing.Size(0, 13);
+            this.showRating.TabIndex = 10;
+            // 
             // FileChoosing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +198,7 @@
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.books228577dtg3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(395, 313);
+            this.Controls.Add(this.showRating);
             this.Controls.Add(this.DeletQSetButton);
             this.Controls.Add(this.NQ);
             this.Controls.Add(this.NextQButton);
@@ -218,6 +232,7 @@
         private System.Windows.Forms.Button NextQButton;
         private System.Windows.Forms.Label NQ;
         private System.Windows.Forms.Button DeletQSetButton;
+        private System.Windows.Forms.Label showRating;
 
 
     }

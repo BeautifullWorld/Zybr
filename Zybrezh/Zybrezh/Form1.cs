@@ -57,8 +57,9 @@ namespace WindowsFormsApplication1
             if (Global.QSet.Count > 0) //еси есть чё показывать
             {
                 i = ChooseQuestion();
-                QuestionShow.Text = Global.QSet[0].Text + "/" + Global.QSet[i].Queue_name + "-" + Global.QSet[i].Queue_place + "-" + Global.QSet[i].ratio + "-" + Global.GetRatio(Global.QSet[i].ratio);
+                QuestionShow.Text = Global.QSet[0].Text;// +"/" + Global.QSet[i].Queue_name + "-" + Global.QSet[i].Queue_place + "-" + Global.QSet[i].ratio + "-" + Global.GetRatio(Global.QSet[i].ratio);
                 NQ.Text = "Вопрос №" + Global.QSet[0].id; //в рамочку наверху
+                showRating.Text = "Выучен на: " + Global.GetRatio(Global.QSet[0].ratio);
             }
             else 
             {
@@ -101,8 +102,9 @@ namespace WindowsFormsApplication1
                 Global.QSet[i].Queue_name = "C";
             }
             i = ChooseQuestion();
-            QuestionShow.Text = Global.QSet[i].Text + "/" + Global.QSet[i].Queue_name + "-" + Global.QSet[i].Queue_place + "-" + Global.QSet[i].ratio + "-" + Global.GetRatio(Global.QSet[i].ratio);
+            QuestionShow.Text = Global.QSet[i].Text;// +"/" + Global.QSet[i].Queue_name + "-" + Global.QSet[i].Queue_place + "-" + Global.QSet[i].ratio + "-" + Global.GetRatio(Global.QSet[i].ratio);
             NQ.Text = "Вопрос №" + Global.QSet[i].id;
+            showRating.Text = "Выучен на: " + Global.GetRatio(Global.QSet[i].ratio);
         }
 
         private void NotOkButton_Click(object sender, EventArgs e) //Не Знаю
@@ -123,8 +125,9 @@ namespace WindowsFormsApplication1
                 Global.QSet[i].Queue_name = "A";
             }
             i = ChooseQuestion();
-            QuestionShow.Text = Global.QSet[i].Text + "/" + Global.QSet[i].Queue_name + "-" + Global.QSet[i].Queue_place + "-" + Global.QSet[i].ratio + "-" + Global.GetRatio(Global.QSet[i].ratio);
+            QuestionShow.Text = Global.QSet[i].Text;// +"/" + Global.QSet[i].Queue_name + "-" + Global.QSet[i].Queue_place + "-" + Global.QSet[i].ratio + "-" + Global.GetRatio(Global.QSet[i].ratio);
              NQ.Text = "Вопрос №" + Global.QSet[i].id;
+             showRating.Text = "Выучен на: " + Global.GetRatio(Global.QSet[i].ratio);
         }
 
         private void MaybeButton_Click(object sender, EventArgs e) //Так себе знаю
@@ -146,8 +149,9 @@ namespace WindowsFormsApplication1
                 Global.QSet[i].Queue_name = "B";
             }
             i = ChooseQuestion();
-            QuestionShow.Text = Global.QSet[i].Text + "/" + Global.QSet[i].Queue_name + "-" + Global.QSet[i].Queue_place + "-" + Global.QSet[i].ratio + "-" + Global.GetRatio(Global.QSet[i].ratio);
+            QuestionShow.Text = Global.QSet[i].Text;// +"/" + Global.QSet[i].Queue_name + "-" + Global.QSet[i].Queue_place + "-" + Global.QSet[i].ratio + "-" + Global.GetRatio(Global.QSet[i].ratio);
             NQ.Text = "Вопрос №" + Global.QSet[i].id;
+            showRating.Text = "Выучен на: " + Global.GetRatio(Global.QSet[i].ratio);
         }
     }
 }

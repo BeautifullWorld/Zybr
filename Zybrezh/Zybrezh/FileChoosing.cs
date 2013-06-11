@@ -28,7 +28,8 @@ namespace WindowsFormsApplication1
             if (Global.QSet.Count > 0) //еси есть чё показывать
             {
                 QuestionShow.Text = Global.QSet[0].Text; //из нашего крутого списка в текстовую форму
-                NQ.Text = "Вопрос №" + Global.QSet[0].id; //в рамочку наверху                
+                NQ.Text = "Вопрос №" + Global.QSet[0].id; //в рамочку наверху 
+                showRating.Text = "Выучен на: " + Global.GetRatio(Global.QSet[0].ratio);
                 PrevQButton.Enabled = true;
                 PrevQButton.BackColor = Color.FromArgb(255, 255, 192);
                 NextQButton.Enabled = true;
@@ -127,7 +128,8 @@ namespace WindowsFormsApplication1
             if (Global.QSet.Count > 0) //еси есть чё показывать
             {
                 QuestionShow.Text = Global.QSet[0].Text; //из нашего крутого списка в текстовую форму
-                NQ.Text = "Вопрос №" + Global.QSet[0].id; //в рамочку наверху                
+                NQ.Text = "Вопрос №" + Global.QSet[0].id; //в рамочку наверху 
+                showRating.Text = "Выучен на: " + Global.GetRatio(Global.QSet[0].ratio);
                 PrevQButton.Enabled = true;
                 PrevQButton.BackColor = Color.FromArgb(255, 255, 192);
                 NextQButton.Enabled = true;
@@ -154,6 +156,7 @@ namespace WindowsFormsApplication1
             if (i > 0) i--;
             QuestionShow.Text = Global.QSet[i].Text;
             NQ.Text = "Вопрос №" + Global.QSet[i].id;
+            showRating.Text = "Выучен на: " + Global.GetRatio(Global.QSet[i].ratio);
         }
 
         private void NextQButton_Click(object sender, EventArgs e) //следующий
@@ -161,6 +164,7 @@ namespace WindowsFormsApplication1
             if (i < Global.QSet.Count-1) i++;
             QuestionShow.Text = Global.QSet[i].Text;
             NQ.Text = "Вопрос №" + Global.QSet[i].id;
+            showRating.Text = "Выучен на: " + Global.GetRatio(Global.QSet[i].ratio);
         }
 
         private void RedactirovatButton_Click(object sender, EventArgs e) //Редактить
@@ -175,6 +179,7 @@ namespace WindowsFormsApplication1
             {
                 QuestionShow.Text = Global.QSet[0].Text; //из нашего крутого списка в текстовую форму
                 NQ.Text = "Вопрос №" + Global.QSet[0].id; //в рамочку наверху
+                showRating.Text = "Выучен на: " + Global.GetRatio(Global.QSet[0].ratio);
                 PrevQButton.Enabled = true;
                 PrevQButton.BackColor = Color.FromArgb(255, 255, 192);
                 NextQButton.Enabled = true;

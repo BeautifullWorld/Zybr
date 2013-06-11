@@ -39,15 +39,16 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Question = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rating = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // QuestionWrite
             // 
             this.QuestionWrite.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.QuestionWrite.Location = new System.Drawing.Point(16, 32);
+            this.QuestionWrite.Location = new System.Drawing.Point(22, 32);
             this.QuestionWrite.Name = "QuestionWrite";
-            this.QuestionWrite.Size = new System.Drawing.Size(304, 45);
+            this.QuestionWrite.Size = new System.Drawing.Size(343, 45);
             this.QuestionWrite.TabIndex = 0;
             this.QuestionWrite.Text = "";
             // 
@@ -74,7 +75,7 @@
             this.Next.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Next.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Next.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Next.Location = new System.Drawing.Point(204, 83);
+            this.Next.Location = new System.Drawing.Point(233, 83);
             this.Next.Name = "Next";
             this.Next.Size = new System.Drawing.Size(116, 30);
             this.Next.TabIndex = 5;
@@ -86,7 +87,7 @@
             // 
             this.NQ.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NQ.AutoSize = true;
-            this.NQ.Location = new System.Drawing.Point(13, 9);
+            this.NQ.Location = new System.Drawing.Point(19, 9);
             this.NQ.Name = "NQ";
             this.NQ.Size = new System.Drawing.Size(58, 13);
             this.NQ.TabIndex = 6;
@@ -100,7 +101,7 @@
             this.Delete.Enabled = false;
             this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Delete.Location = new System.Drawing.Point(234, 340);
+            this.Delete.Location = new System.Drawing.Point(292, 340);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(86, 25);
             this.Delete.TabIndex = 8;
@@ -116,7 +117,7 @@
             this.Change.Enabled = false;
             this.Change.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Change.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Change.Location = new System.Drawing.Point(142, 340);
+            this.Change.Location = new System.Drawing.Point(200, 340);
             this.Change.Name = "Change";
             this.Change.Size = new System.Drawing.Size(86, 25);
             this.Change.TabIndex = 9;
@@ -132,9 +133,10 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.Question});
+            this.Question,
+            this.Rating});
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 119);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 119);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -147,13 +149,14 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.DefaultCellStyle.NullValue = "0";
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(304, 205);
+            this.dataGridView1.Size = new System.Drawing.Size(343, 205);
             this.dataGridView1.TabIndex = 11;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(72, 6);
+            this.textBox1.Location = new System.Drawing.Point(80, 6);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(30, 20);
             this.textBox1.TabIndex = 12;
@@ -168,7 +171,13 @@
             // 
             this.Question.HeaderText = "Вопрос";
             this.Question.Name = "Question";
-            this.Question.Width = 267;
+            this.Question.Width = 244;
+            // 
+            // Rating
+            // 
+            this.Rating.HeaderText = "Выучен        на";
+            this.Rating.Name = "Rating";
+            this.Rating.Width = 57;
             // 
             // Form2
             // 
@@ -176,7 +185,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.books228577dtg3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(332, 377);
+            this.ClientSize = new System.Drawing.Size(390, 377);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Change);
@@ -208,6 +217,7 @@
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Question;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rating;
 
     }
 }

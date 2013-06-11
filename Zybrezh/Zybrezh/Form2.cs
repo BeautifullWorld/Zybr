@@ -18,9 +18,8 @@ namespace WindowsFormsApplication1
             dataGridView1.Rows.Clear();
             for (int i = 0; i < Q.Count; i++)
             {
-                dataGridView1.Rows.Add( Q[i].id, Q[i].Text);
+                dataGridView1.Rows.Add(Q[i].id, Q[i].Text, Global.GetRatio(Q[i].ratio));
             }
-            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
         }
         ////////////////////////////////////////////
         public int MaxIndex(List<Global.Question> Q)
@@ -29,11 +28,12 @@ namespace WindowsFormsApplication1
             if (Q.Count > 0)
             {
                 max = Convert.ToInt32(Q[0].id);
-                if (max != 1) return 1;
+                if (max != 1) return 0;
                 num2 = max;
                 for (int i = 1; i < Q.Count; i++)
                 {
                     num1 = Convert.ToInt32(Q[i].id);
+                    if (num2 == num1) num2--;
                     if (num1 != num2 + 1) return num2;
                     if (max < num1)
                         max = num1;
@@ -70,10 +70,9 @@ namespace WindowsFormsApplication1
             New.id = textBox1.Text;
             New.Queue_name = "A";
             New.ratio = null;
-            dataGridView1.Rows.Add(New.id, New.Text);
-            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
             Global.QSet.Add(New);
-            Global.QSet.Sort(new Global.Question.SortByName());
+            Global.QSet.Sort(new Global.Question.SortById());
+            FillDataGridView(Global.QSet);
             QuestionWrite.Text = null; //обновим
             textBox1.Text = (MaxIndex(Global.QSet) + 1) + "";
             if (Global.QSet.Count > 0)
@@ -83,6 +82,7 @@ namespace WindowsFormsApplication1
                 Change.BackColor = Color.FromArgb(255, 255, 192);
                 Change.Enabled = true;
             }
+            QuestionWrite.Focus();
         }
 
         private void End_Click(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        public void Change_Click(object sender, EventArgs e)//ТУТ НАДО ПРОВЕРИТЬ НЕ ПОРТЯТСЯ ЛИ НОВЫЕ АТРИБУТЫ!!!
+        public void Change_Click(object sender, EventArgs e)//ТУТ НАДО ПРОВЕРИТЬ НЕ ПОРТЯТСЯ ЛИ НОВЫЕ АТРИБУТЫ!!!  вроде, нет
         {
             QChanging QChanging = new QChanging(this);
             this.Hide();
@@ -125,10 +125,8 @@ namespace WindowsFormsApplication1
             New = Global.QSet.Find(p => p.id == ind);
             New.id = QChanging.textBox1.Text;
             New.Text = QChanging.QuestionWrite.Text;
-            Global.QSet.Sort(new Global.Question.SortByName());
-            dataGridView1.Rows.RemoveAt(index);
-            dataGridView1.Rows.Add(New.id, New.Text);
-            dataGridView1.Sort(dataGridView1.Columns[0], ListSortDirection.Ascending);
+            Global.QSet.Sort(new Global.Question.SortById());
+            FillDataGridView(Global.QSet);
             textBox1.Text = (MaxIndex(Global.QSet) + 1) + "";
             this.Show();
         }
