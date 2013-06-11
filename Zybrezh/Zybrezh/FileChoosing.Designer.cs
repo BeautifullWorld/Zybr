@@ -212,6 +212,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "FileChoosing";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "База Вопросов";
             this.Load += new System.EventHandler(this.FileChoosing_Load);
             this.ResumeLayout(false);

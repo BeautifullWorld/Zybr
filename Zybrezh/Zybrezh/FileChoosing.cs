@@ -63,24 +63,14 @@ namespace WindowsFormsApplication1
             }
             catch
             {
-                ErrorForm Ups = new ErrorForm();
-                this.Hide();
-                Ups.ShowDialog();
-                Ups.Close();
-                this.Show();
-
+                MessageBox.Show("Этот файл не подходит или повреждён");
                 fu.Close();
                 bugfix = true;
             }
             if (bugfix) return;
             if(xu.GetElementsByTagName("QuestionSet").Count == 0) 
             {
-                ErrorForm Ups2 = new ErrorForm();
-                this.Hide();
-                Ups2.ShowDialog();
-                Ups2.Close();
-                this.Show();
-
+                MessageBox.Show("Этот файл не подходит или повреждён");
                 fu.Close();
                 xu.Save(openFileDialog1.FileName);
                 return;
@@ -109,12 +99,7 @@ namespace WindowsFormsApplication1
             }
             catch //а я хз может чё нить случится
             {
-                ErrorForm Ups = new ErrorForm();
-                this.Hide();
-                Ups.ShowDialog();
-                Ups.Close();
-                this.Show();
-
+                MessageBox.Show("Этот файл не подходит или повреждён");
                 bugfix = true;
             }
             if (bugfix) return;

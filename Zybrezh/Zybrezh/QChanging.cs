@@ -11,6 +11,17 @@ namespace WindowsFormsApplication1
 {
     public partial class QChanging : Form
     {
+        /////////////////////////////////
+        public bool IndexExists(string a)
+        {
+            bool b = false;
+            for (int i = 0; i < Global.QSet.Count; i++)
+            {
+                if (Global.QSet[i].id == a) b = true;
+            }
+            return b;
+        }
+
         public QChanging(Form2 f2)//изменил конструктор, чтобы получить значенния из Form2
         {
             InitializeComponent();
@@ -22,6 +33,11 @@ namespace WindowsFormsApplication1
 
         private void Save_Click(object sender, EventArgs e)
         {
+            if (IndexExists(textBox1.Text))
+            {
+                MessageBox.Show("Вопрос с таким номером уже существует!");
+                return;
+            }
             this.Close();
         }
     }
