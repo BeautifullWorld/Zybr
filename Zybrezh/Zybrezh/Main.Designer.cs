@@ -30,6 +30,7 @@
         {
             this.StartButton = new System.Windows.Forms.Button();
             this.BaseButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // StartButton
@@ -62,6 +63,15 @@
             this.BaseButton.UseVisualStyleBackColor = false;
             this.BaseButton.Click += new System.EventHandler(this.BaseButton_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(131, 249);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(154, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Авторы: Артур Х. и Руслан В.";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -69,6 +79,7 @@
             this.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.books228577dtg3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BaseButton);
             this.Controls.Add(this.StartButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -79,6 +90,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -86,5 +98,6 @@
 
         private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.Button BaseButton;
+        private System.Windows.Forms.Label label1;
     }
 }
