@@ -35,3 +35,4 @@ C:\Users\Артур\Documents\GitHub\Zybrezh\Zybrezh\obj\x86\Release\GenerateRes
 >>>>>>> 0a616eb2bd351e86c689f33e0c4e4c679e0e4de1
 C:\Users\Артур\Documents\GitHub\Zybrezh\Zybrezh\obj\x86\Release\WindowsFormsApplication1.QChanging.resources
 C:\Users\Артур\Documents\GitHub\Zybrezh\Zybrezh\obj\x86\Release\WindowsFormsApplication1.ErrorForm.resources
+C:\Users\Артур\Documents\GitHub\Zybrezh\Zybrezh\obj\x86\Release\WindowsFormsApplication1.AreUSure.resources

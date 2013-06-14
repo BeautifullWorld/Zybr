@@ -86,6 +86,8 @@
             this.Name = "QChanging";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Изменить вопрос";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QChanging_FormClosing);
+            this.Load += new System.EventHandler(this.QChanging_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

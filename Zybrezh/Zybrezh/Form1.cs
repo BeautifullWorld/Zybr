@@ -102,7 +102,7 @@ namespace WindowsFormsApplication1
                 Global.QSet[i].Queue_name = "C";
             }
             i = ChooseQuestion();
-            QuestionShow.Text = Global.QSet[i].Text;// +"/" + Global.QSet[i].Queue_name + "-" + Global.QSet[i].Queue_place + "-" + Global.QSet[i].ratio + "-" + Global.GetRatio(Global.QSet[i].ratio);
+            QuestionShow.Text = Global.QSet[i].Text;//+"/" + Global.QSet[i].Queue_name+ "-" + Global.QSet[i].Queue_place + "-" + Global.QSet[i].ratio + "-" + Global.GetRatio(Global.QSet[i].ratio);
             NQ.Text = "Вопрос №" + Global.QSet[i].id;
             showRating.Text = "Выучен на: " + Global.GetRatio(Global.QSet[i].ratio);
         }
@@ -152,6 +152,11 @@ namespace WindowsFormsApplication1
             QuestionShow.Text = Global.QSet[i].Text;// +"/" + Global.QSet[i].Queue_name + "-" + Global.QSet[i].Queue_place + "-" + Global.QSet[i].ratio + "-" + Global.GetRatio(Global.QSet[i].ratio);
             NQ.Text = "Вопрос №" + Global.QSet[i].id;
             showRating.Text = "Выучен на: " + Global.GetRatio(Global.QSet[i].ratio);
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Global.SaveCurrentChanges(Global.QSetName);
         }
     }
 }

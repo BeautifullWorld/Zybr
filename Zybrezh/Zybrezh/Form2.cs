@@ -76,6 +76,21 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Вопрос с таким номером уже существует!");
                 return;
             }
+            int a=-10;
+            try
+            {
+                a = Convert.ToInt32(textBox1.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Номер вопроса должен быть натуральным, положительным числом!");
+                return;
+            }
+            if (a <= 0)
+            {
+                MessageBox.Show("Номер вопроса должен быть натуральным, положительным числом!");
+                return;
+            }
             Global.Question New = new Global.Question();
             New.Text = QuestionWrite.Text;
             New.Queue_place = Global.LastPlaceInQueue("A");
@@ -141,6 +156,11 @@ namespace WindowsFormsApplication1
             FillDataGridView(Global.QSet);
             textBox1.Text = (MaxIndex(Global.QSet) + 1) + "";
             this.Show();
+        }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Global.SaveCurrentChanges(Global.QSetName);
         }
     }
 }

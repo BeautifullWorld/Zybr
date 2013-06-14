@@ -34,6 +34,16 @@ namespace WindowsFormsApplication1
             FChoosing.ShowDialog();
             FChoosing.Close();
             this.Show();
+            if (Global.QSetName == null)
+            {
+                button1.Enabled = false;
+                button1.BackColor = Color.Gray;
+            }
+            else
+            {
+                button1.Enabled = true;
+                button1.BackColor = Color.FromArgb(255, 255, 192);
+            }
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -44,6 +54,20 @@ namespace WindowsFormsApplication1
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             Global.SaveCurrentChanges(Global.QSetName); //сохраним изменения
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AreUSure Sure = new AreUSure();
+            this.Hide();
+            Sure.ShowDialog();
+            Sure.Close();
+            this.Show();
+        }
+
+        private void Main_Shown(object sender, EventArgs e)
+        {
+
         }
     }
 }

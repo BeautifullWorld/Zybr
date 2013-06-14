@@ -129,7 +129,7 @@
             // showRating
             // 
             this.showRating.AutoSize = true;
-            this.showRating.Location = new System.Drawing.Point(83, 16);
+            this.showRating.Location = new System.Drawing.Point(105, 16);
             this.showRating.Name = "showRating";
             this.showRating.Size = new System.Drawing.Size(0, 13);
             this.showRating.TabIndex = 7;
@@ -166,6 +166,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Зубрим";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

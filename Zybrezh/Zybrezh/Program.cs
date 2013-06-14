@@ -33,7 +33,7 @@ namespace WindowsFormsApplication1
         ///////////////////////////////////// Глобальные переменные
 
         public static string QSetName = null;
-        public static bool AreYouSure = false;
+        public static bool AreYouSure = false; //в FileChoosing Юзаю
         public static List<Question> QSet = new List<Question>();
 
         //////////////////////////////////////////////////////////////////////////////////

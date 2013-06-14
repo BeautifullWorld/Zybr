@@ -25,7 +25,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationVersion>1.2.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AreUSure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AreUSure.Designer.cs">
+      <DependentUpon>AreUSure.cs</DependentUpon>
+    </Compile>
     <Compile Include="AreUSurecs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <Compile Include="QChanging.Designer.cs">
       <DependentUpon>QChanging.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AreUSure.resx">
+      <DependentUpon>AreUSure.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AreUSurecs.resx">
       <DependentUpon>AreUSurecs.cs</DependentUpon>
     </EmbeddedResource>
